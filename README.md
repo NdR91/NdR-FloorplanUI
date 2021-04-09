@@ -8,17 +8,17 @@
 ## Premessa
 
 Data l'alta richiesta di istruzioni su come creare un'interfaccia Floorplan su HomeAssistant, ho deciso di condividere qui la mia esperienza.
-Questa repo non vuole essere propriamente una guida "steb by step", ma cercherò comunque di farla il più completa possibile.
+Questa repo non vuole essere propriamente una guida "steb by step", ma cercherò comunque di farla il più completa possibile. 
 
 Questa volta scriverò tutto in Italiano, per il semplice fatto che di Guide/Repo in inglese sull'argomento ce ne sono già parecchie.
 
 Ultima, doverosa premessa: non so per quanto tempo manterrò aggiornata questa Repo. Qualsiasi consiglio, correztione o suggerimento saranno sempre ben accetti: aprite una Issue in modo da tenere tutto sempre ben tracciato.
 
-# Getting Started
+# Floorplan e Picture Elements
 
 ## Approccio
 
-Nella creazione di questa dashboard, il primo, fondamentale, concetto da tenere a mente è il funzionamento della card "[Picture Elements](https://www.home-assistant.io/lovelace/picture-elements/)".
+Nella creazione di questa dashboard il primo, fondamentale, concetto da tenere a mente è il funzionamento della card "[Picture Elements](https://www.home-assistant.io/lovelace/picture-elements/)".
 
 Questa card, in realtà, ha un meccanismo molto semplice: 
 - Avrà **sempre** un'immagine di sfondo e degli elementi posti **sopra** di essa;
@@ -34,4 +34,21 @@ Detto questo, una cosa importante da sapere è che le immagini che andremo a cre
 La scelta del tema, in questo caso, non è particolarmente vincolante. 
 Potete crearne uno vostro, copiare quello presente in questa o in altre mie repo (es. [NdR-TabletUI](https://github.com/NdR91/NdR-TabletUI)), o semplicemente scaricare uno dei tanti presenti su HACS. Starà a voi cercare l'abbinamento corretto con i colori che userete.
 
-##
+## Creazione delle immagini necessarie
+Per la creazione delle immagini necessarie, sono necessari due software:
+1. SweetHome3d (o simili);
+2. Photoshop (o simili, es. Gimp);
+
+### SweetHome3D
+La creazione della propria planimetria è un processo più o meno lungo. Il tempo che impiegherete dipenderà soprattutto dal livello di dettaglio che desiderate raggiungere nella rappresentazione di casa vostra.
+
+Sul sito ufficiale, oltre al download gratuito del software, troverete anche una lista di Modelli e Texture (anch'essi gratuiti) che vi serviranno per "decorare" la vostra planimetria. Ce ne sono anche tanti altri in rete, sia gratuiti che a pagamento, basta cercare.
+
+Le istruzioni specifiche per l'utilizzo di questo software non saranno trattate su questa repo, per cui vi consiglio di fare una semplice ricerca sul web.
+
+Una volta completata la propria planimetria, con il livello di dettaglio desiderato si potrà passare alla creazione delle immagini.
+>Attenzione: oltre alla planimetria, è necessario inserire i punti luce che si vorranno mostrare nella nostra Dashboard. I punti luce possono essere dei modelli, nel caso in cui vogliate mostrare anche l'oggetto (lampada, faretto ecc..), oppure delle fonti di luce "invisibili". Anche in questo caso, a voi la scelta.
+
+>Screenshot da inserire
+
+# Dashboard, Sidebar e Menu
