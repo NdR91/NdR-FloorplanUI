@@ -25,22 +25,43 @@ Questa card, in realtà, ha un meccanismo molto semplice:
 - Ogni elemento creerà come una sorta di layer aggiuntivo;
 - Ogni elemento/layer sarà inserito nello stesso ordine secondo il quale è stato inserito nel vostro file .yaml. Questo significa che due elementi immagine messi uno sopra l'altro (e nella stessa posizione, ma questo lo vedremo dopo) si sovrasteranno. Se la seconda immagine (elemento) inserita nel file .yaml è più grande della precedente, essa la coprirà completamente;
 
-><details><summary>Esempio</summary>
->Picture Entity con un Badge come elemento:
+><details><summary>Esempi</summary>
+>1. Picture Elements con un Badge come elemento:
 >
 > ```yaml
 >type: picture-elements
+>image: 'https://demo.home-assistant.io/stub_config/floorplan.png'
 >elements:
 >  - type: state-badge
 >    entity: binary_sensor.stato_asciugatrice
 >    style:
 >      top: 32%
 >      left: 40%
->image: 'https://demo.home-assistant.io/stub_config/floorplan.png'
 > ```
 >
-><img src="/www/ndr_floorplan/Screenshot/pic_el1.jpg" width="600" /> 
+><img src="/www/ndr_floorplan/Screenshot/pic_el1.jpg" width="300" /> 
+>Notare come l'elemento si sovrappone all'immagine principale, ovvero la planimetria.
+>2. Picture Elements con due elementi:
+>
+> ```yaml
+>type: picture-elements
+>image: 'https://demo.home-assistant.io/stub_config/floorplan.png'
+>elements:
+>  - type: state-badge
+>    entity: binary_sensor.stato_asciugatrice
+>    style:
+>      top: 32%
+>      left: 40%
+>  - type: image
+>    image: /local/ndr_floorplan/blurredFloorplan.png
+>    style:
+>      top: 32%
+>      left: 40%
+> ```
+> In questo caso, il secondo elemento (image) sovrasta il primo.
 ></details>
+
+
 
 - Gli elementi possono essere di svariati generi. In questa repo troverete prevalentemente Immagini e Button Cards.
 
