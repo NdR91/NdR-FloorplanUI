@@ -36,7 +36,7 @@ Detto questo, una cosa importante da sapere è che le immagini che andremo a cre
 La scelta del tema, in questo caso, non è particolarmente vincolante. 
 Potete crearne uno vostro, copiare quello presente in questa o in altre mie repo (es. [NdR-TabletUI](https://github.com/NdR91/NdR-TabletUI)), o semplicemente scaricare uno dei tanti presenti su HACS. Starà a voi cercare l'abbinamento corretto con i colori che userete.
 
-## Creazione delle immagini necessarie
+## Creazione delle immagini
 Per la creazione delle immagini necessarie, sono necessari due software:
 1. SweetHome3d (o simili);
 2. Photoshop (o simili, es. Gimp);
@@ -59,7 +59,7 @@ La planimetria completata sarà simile alla seguente:
 
 Ora, il punto fondamentale: la creazione delle immagini che useremo nel nostro Floorplan.
 Per fare questo, dovrete "posizionarvi" in un punto il più centrale possibile all'interno della vostra planimetria.
-Per farlo, utilizzate il menu "Vista 3D --> Vista Virtuale", o semplicemente Ctrl+Shift+D.
+Per farlo, utilizzate il menu **"Vista 3D --> Vista Virtuale"**, o semplicemente **Ctrl+Shift+D**.
 
 >Screenshot
 
@@ -67,5 +67,12 @@ Una volta entrati nella modalità Vista Virtuale, apparirà un indicatore a form
 Importante: una volta decisi tutti i parametri *"X, Y, Altezza Occhi, Angoli..."* segnateveli. Dovranno essere sempre identici per ogni immagine che creerete, anche in futuro per eventuali aggiornamenti.
 
 >Screenshot
+
+Settata la posizione, non resta che generare le immagini. Il totale delle immagini che vi serviranno equivale ad 1 + No. di Luci che avete (+1 opzionale).
+>Esempio:
+>Nel caso in cui aveste 10 punti luce da gestire, avrete 11 o 12 foto in totale:
+>-La prima immagine, sarà sempre la vostra planimetria di notte, con tutte le luci spente;
+>-L'ultima, quella opzionale, sarà la vosra planimetria di giorno, sempre a luci spente;
+>-Le restanti immagini saranno le vostre luci accese (una foto per luce accesa).
 
 # Dashboard, Sidebar e Menu
