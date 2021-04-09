@@ -41,7 +41,7 @@ views:
         card:
           ###################   Picture Elements Card    #####################
           type: picture-elements       
-          image: /local/ui/floorplan/casa-notte.png
+          image: /local/ndr_floorplan/floorplan/casa-notte.png
           style: |
             ha-card:first-child {
               background: rgba(42, 46, 48, 1)
@@ -55,7 +55,7 @@ views:
               hold_action:
                 action: none
               state_image:
-                above_horizon: /local/ui/floorplan/casa-giorno.png
+                above_horizon: /local/ndr_floorplan/floorplan/casa-giorno.png
                 below_horizon: /local/transparent.png
               style:
                 height: 100%
@@ -74,7 +74,7 @@ views:
               entity: weather.home
               hold_action:
                 action: none
-              image: /local/ui/floorplan/weather/rainstorm.gif
+              image: /local/ndr_floorplan/floorplan/weather/rainstorm.gif
               state_filter:
                 'pouring': opacity(100%)
               style:
@@ -93,7 +93,7 @@ views:
             - action: none
               hold_action:
                 action: none
-              image: /local/ui/floorplan/interno-notte.png
+              image: /local/ndr_floorplan/floorplan/interno-notte.png
               style:
                 height: 100%
                 left: 50%
@@ -108,7 +108,7 @@ views:
               hold_action:
                 action: none
               state_image:
-                above_horizon: /local/ui/floorplan/interno-giorno.png
+                above_horizon: /local/ndr_floorplan/floorplan/interno-giorno.png
                 below_horizon: /local/transparent.png
               style:
                 height: 100%
@@ -135,7 +135,7 @@ views:
               entity: light.faretti
               hold_action:
                 action: none
-              image: /local/ui/floorplan/sala_faretti.png
+              image: /local/ndr_floorplan/floorplan/sala_faretti.png
               style:
                 filter: >-
                   ${ "hue-rotate(" + (states['light.faretti'].attributes.hs_color
@@ -153,7 +153,7 @@ views:
               entity: light.led_cucina
               hold_action:
                 action: none
-              image: /local/ui/floorplan/sala_led-cucina.png
+              image: /local/ndr_floorplan/floorplan/sala_led-cucina.png
               style:
                 filter: >-
                   ${ "hue-rotate(" + (states['light.led_cucina'].attributes.hs_color
@@ -171,7 +171,7 @@ views:
               entity: light.led_scale
               hold_action:
                 action: none
-              image: /local/ui/floorplan/sala_led-scale.png
+              image: /local/ndr_floorplan/floorplan/sala_led-scale.png
               style:
                 filter: >-
                   ${ "hue-rotate(" + (states['light.led_scale'].attributes.hs_color
@@ -189,7 +189,7 @@ views:
               entity: light.luce1
               hold_action:
                 action: none
-              image: /local/ui/floorplan/sala_luce1.png
+              image: /local/ndr_floorplan/floorplan/sala_luce1.png
               style:
                 filter: >-
                   ${ "hue-rotate(" + (states['light.luce1'].attributes.hs_color
@@ -207,7 +207,7 @@ views:
               entity: light.luce1
               hold_action:
                 action: none
-              image: /local/ui/floorplan/sala_luce2.png
+              image: /local/ndr_floorplan/floorplan/sala_luce2.png
               style:
                 filter: >-
                   ${ "hue-rotate(" + (states['light.luce2'].attributes.hs_color
@@ -231,7 +231,7 @@ views:
               entity: light.luce_bagno
               hold_action:
                 action: none
-              image: /local/ui/floorplan/bagno.png
+              image: /local/ndr_floorplan/floorplan/bagno.png
               style:
                 filter: >-
                   ${ "hue-rotate(" + (states['light.luce_bagno'].attributes.hs_color
@@ -255,7 +255,7 @@ views:
               entity: light.luce_camera
               hold_action:
                 action: none
-              image: /local/ui/floorplan/camera.png
+              image: /local/ndr_floorplan/floorplan/camera.png
               style:
                 filter: >-
                   ${ "hue-rotate(" + (states['light.luce_camera'].attributes.hs_color
@@ -279,7 +279,7 @@ views:
               entity: light.luce_giardino
               hold_action:
                 action: none
-              image: /local/ui/floorplan/balcone.png
+              image: /local/ndr_floorplan/floorplan/balcone.png
               style:
                 filter: >-
                   ${ "hue-rotate(" + (states['light.luce_giardino'].attributes.hs_color
@@ -529,7 +529,7 @@ views:
             - action: none
               hold_action:
                 action: none
-              image: /local/ui/sidebar/sidebar_xl.png
+              image: /local/ndr_floorplan/sidebar/sidebar_xl.png
               style:
                 height: 100%
                 left: 11.73828125%
@@ -576,7 +576,7 @@ views:
             #########################    MENU BUTTONS    #########################
 
             - action: none
-              image: /local/ui/sidebar/home_on.png
+              image: /local/ndr_floorplan/sidebar/home_on.png
               style:
                 border-radius: 5vw
                 box-shadow: '0px 0.2vw 0.8vw 0px rgba(0,0,0,0.1)'
@@ -588,7 +588,7 @@ views:
                 navigation_path: /ndr-tabletui/home
               type: image
             - action: none
-              image: /local/ui/sidebar/devices_off.png?v=1
+              image: /local/ndr_floorplan/sidebar/devices_off.png?v=1
               style:
                 left: 11.7%
                 top: 34%
@@ -598,7 +598,7 @@ views:
                 navigation_path: /ndr-tabletui/devices
               type: image
             - action: none
-              image: /local/ui/sidebar/media_off.png?v=1
+              image: /local/ndr_floorplan/sidebar/media_off.png?v=1
               style:
                 left: 11.7%
                 top: 42%
@@ -608,7 +608,7 @@ views:
                 navigation_path: /ndr-tabletui/media
               type: image
             - action: none
-              image: /local/ui/sidebar/clima_off.png
+              image: /local/ndr_floorplan/sidebar/clima_off.png
               style:
                 left: 11.7%
                 top: 50%
@@ -618,7 +618,7 @@ views:
                 navigation_path: /ndr-tabletui/clima
               type: image
             - action: none
-              image: /local/ui/sidebar/down_2s.gif
+              image: /local/ndr_floorplan/sidebar/down_2s.gif
               style:
                 left: 11.7%
                 top: 58%
@@ -814,7 +814,7 @@ views:
             #########################    Overlay shadow images    #########################
               
             - action: none
-              image: /local/ui/sidebar/sideShadow.png
+              image: /local/ndr_floorplan/sidebar/sideShadow.png
               style:
                 height: 35%
                 left: 18.45%
@@ -823,7 +823,7 @@ views:
                 width: 10%
               type: image
             - action: none
-              image: /local/ui/sidebar/sidebarInnerShadow.png
+              image: /local/ndr_floorplan/sidebar/sidebarInnerShadow.png
               style:
                 left: 22.83%
                 opacity: 0.7
@@ -846,7 +846,7 @@ views:
     panel: true
     cards:
       - type: picture-elements    
-        image: /local/ui/blurredFloorplan.png
+        image: /local/ndr_floorplan/blurredFloorplan.png
         style: |
           ha-card {
             background: rgba(42, 46, 48, 1)
@@ -1779,7 +1779,7 @@ views:
           - action: none
             hold_action:
               action: none
-            image: /local/ui/sidebar/sidebar_xl.png
+            image: /local/ndr_floorplan/sidebar/sidebar_xl.png
             style:
               height: 100%
               left: 11.73828125%
@@ -1826,7 +1826,7 @@ views:
           #########################    MENU BUTTONS    #########################
 
           - action: none
-            image: /local/ui/sidebar/home_off.png
+            image: /local/ndr_floorplan/sidebar/home_off.png
             style:
               left: 11.7%
               top: 26%
@@ -1836,7 +1836,7 @@ views:
               navigation_path: /ndr-tabletui/home
             type: image
           - action: none
-            image: /local/ui/sidebar/devices_on.png
+            image: /local/ndr_floorplan/sidebar/devices_on.png
             style:
               border-radius: 5vw
               box-shadow: '0px 0.2vw 0.8vw 0px rgba(0,0,0,0.1)'
@@ -1848,7 +1848,7 @@ views:
               navigation_path: /ndr-tabletui/devices
             type: image
           - action: none
-            image: /local/ui/sidebar/media_off.png?v=1
+            image: /local/ndr_floorplan/sidebar/media_off.png?v=1
             style:
               left: 11.7%
               top: 42%
@@ -1858,7 +1858,7 @@ views:
               navigation_path: /ndr-tabletui/media
             type: image
           - action: none
-            image: /local/ui/sidebar/clima_off.png
+            image: /local/ndr_floorplan/sidebar/clima_off.png
             style:
               left: 11.7%
               top: 50%
@@ -1868,7 +1868,7 @@ views:
               navigation_path: /ndr-tabletui/clima
             type: image
           - action: none
-            image: /local/ui/sidebar/down_2s.gif
+            image: /local/ndr_floorplan/sidebar/down_2s.gif
             style:
               left: 11.7%
               top: 58%
@@ -2063,7 +2063,7 @@ views:
           #########################    Overlay shadow images    #########################
             
           - action: none
-            image: /local/ui/sidebar/sideShadow.png
+            image: /local/ndr_floorplan/sidebar/sideShadow.png
             style:
               height: 35%
               left: 18.45%
@@ -2072,7 +2072,7 @@ views:
               width: 10%
             type: image
           - action: none
-            image: /local/ui/sidebar/sidebarInnerShadow.png
+            image: /local/ndr_floorplan/sidebar/sidebarInnerShadow.png
             style:
               left: 22.83%
               opacity: 0.7
@@ -2097,7 +2097,7 @@ views:
     badges: []
     cards:
       - type: picture-elements
-        image: /local/ui/blurredFloorplan.png
+        image: /local/ndr_floorplan/blurredFloorplan.png
         style: |
           upcoming-media-card ha-card{
                   background: none;
@@ -3554,7 +3554,7 @@ views:
           - action: none
             hold_action:
               action: none
-            image: /local/ui/sidebar/sidebar_xl.png
+            image: /local/ndr_floorplan/sidebar/sidebar_xl.png
             style:
               height: 100%
               left: 11.73828125%
@@ -3601,7 +3601,7 @@ views:
           #########################    MENU BUTTONS    #########################
 
           - action: none
-            image: /local/ui/sidebar/home_off.png
+            image: /local/ndr_floorplan/sidebar/home_off.png
             style:
               left: 11.7%
               top: 26%
@@ -3611,7 +3611,7 @@ views:
               navigation_path: /ndr-tabletui/home
             type: image
           - action: none
-            image: /local/ui/sidebar/devices_off.png
+            image: /local/ndr_floorplan/sidebar/devices_off.png
             style:
               left: 11.7%
               top: 34%
@@ -3621,7 +3621,7 @@ views:
               navigation_path: /ndr-tabletui/devices
             type: image
           - action: none
-            image: /local/ui/sidebar/media_on.png?v=1
+            image: /local/ndr_floorplan/sidebar/media_on.png?v=1
             style:
               border-radius: 5vw
               box-shadow: '0px 0.2vw 0.8vw 0px rgba(0,0,0,0.1)'
@@ -3633,7 +3633,7 @@ views:
               navigation_path: /ndr-tabletui/media
             type: image
           - action: none
-            image: /local/ui/sidebar/clima_off.png
+            image: /local/ndr_floorplan/sidebar/clima_off.png
             style:
               left: 11.7%
               top: 50%
@@ -3643,7 +3643,7 @@ views:
               navigation_path: /ndr-tabletui/clima
             type: image
           - action: none
-            image: /local/ui/sidebar/down_2s.gif
+            image: /local/ndr_floorplan/sidebar/down_2s.gif
             style:
               left: 11.7%
               top: 58%
@@ -3838,7 +3838,7 @@ views:
           #########################    Overlay shadow images    #########################
             
           - action: none
-            image: /local/ui/sidebar/sideShadow.png
+            image: /local/ndr_floorplan/sidebar/sideShadow.png
             style:
               height: 35%
               left: 18.45%
@@ -3847,7 +3847,7 @@ views:
               width: 10%
             type: image
           - action: none
-            image: /local/ui/sidebar/sidebarInnerShadow.png
+            image: /local/ndr_floorplan/sidebar/sidebarInnerShadow.png
             style:
               left: 22.83%
               opacity: 0.7
@@ -3868,7 +3868,7 @@ views:
     panel: true
     cards: 
       - type: picture-elements    
-        image: /local/ui/blurredFloorplan.png
+        image: /local/ndr_floorplan/blurredFloorplan.png
         style: |
           ha-card {
             background: rgba(42, 46, 48, 1)
@@ -4043,7 +4043,7 @@ views:
           - action: none
             hold_action:
               action: none
-            image: /local/ui/sidebar/sidebar_xl.png
+            image: /local/ndr_floorplan/sidebar/sidebar_xl.png
             style:
               height: 100%
               left: 11.73828125%
@@ -4090,7 +4090,7 @@ views:
           #########################    MENU BUTTONS    #########################
 
           - action: none
-            image: /local/ui/sidebar/home_off.png
+            image: /local/ndr_floorplan/sidebar/home_off.png
             style:
               left: 11.7%
               top: 26%
@@ -4100,7 +4100,7 @@ views:
               navigation_path: /ndr-tabletui/home
             type: image
           - action: none
-            image: /local/ui/sidebar/devices_off.png
+            image: /local/ndr_floorplan/sidebar/devices_off.png
             style:
               left: 11.7%
               top: 34%
@@ -4110,7 +4110,7 @@ views:
               navigation_path: /ndr-tabletui/devices
             type: image
           - action: none
-            image: /local/ui/sidebar/media_off.png?v=1
+            image: /local/ndr_floorplan/sidebar/media_off.png?v=1
             style:
               left: 11.7%
               top: 42%
@@ -4120,7 +4120,7 @@ views:
               navigation_path: /ndr-tabletui/media
             type: image
           - action: none
-            image: /local/ui/sidebar/clima_on.png
+            image: /local/ndr_floorplan/sidebar/clima_on.png
             style:
               border-radius: 5vw
               box-shadow: '0px 0.2vw 0.8vw 0px rgba(0,0,0,0.1)'
@@ -4132,7 +4132,7 @@ views:
               navigation_path: /ndr-tabletui/clima
             type: image
           - action: none
-            image: /local/ui/sidebar/down_2s.gif
+            image: /local/ndr_floorplan/sidebar/down_2s.gif
             style:
               left: 11.7%
               top: 58%
@@ -4327,7 +4327,7 @@ views:
           #########################    Overlay shadow images    #########################
             
           - action: none
-            image: /local/ui/sidebar/sideShadow.png
+            image: /local/ndr_floorplan/sidebar/sideShadow.png
             style:
               height: 35%
               left: 18.45%
@@ -4336,7 +4336,7 @@ views:
               width: 10%
             type: image
           - action: none
-            image: /local/ui/sidebar/sidebarInnerShadow.png
+            image: /local/ndr_floorplan/sidebar/sidebarInnerShadow.png
             style:
               left: 22.83%
               opacity: 0.7
@@ -4357,7 +4357,7 @@ views:
     panel: true
     cards:
       - type: picture-elements    
-        image: /local/ui/blurredFloorplan.png
+        image: /local/ndr_floorplan/blurredFloorplan.png
         style: |
           ha-card {
             background: rgba(42, 46, 48, 1)
@@ -4711,7 +4711,7 @@ views:
           - action: none
             hold_action:
               action: none
-            image: /local/ui/sidebar/sidebar_xl.png
+            image: /local/ndr_floorplan/sidebar/sidebar_xl.png
             style:
               height: 100%
               left: 11.73828125%
@@ -4758,7 +4758,7 @@ views:
           #########################    MENU BUTTONS    #########################
 
           - action: none
-            image: /local/ui/sidebar/up_2s.gif
+            image: /local/ndr_floorplan/sidebar/up_2s.gif
             style:
               left: 11.7%
               top: 26%
@@ -4768,7 +4768,7 @@ views:
               navigation_path: /ndr-tabletui/home
             type: image 
           - action: none
-            image: /local/ui/sidebar/system_on.png
+            image: /local/ndr_floorplan/sidebar/system_on.png
             style:
               border-radius: 5vw
               box-shadow: '0px 0.2vw 0.8vw 0px rgba(0,0,0,0.1)'
@@ -4780,7 +4780,7 @@ views:
               navigation_path: /ndr-tabletui/system
             type: image
           - action: none
-            image: /local/ui/sidebar/domotica_off.png
+            image: /local/ndr_floorplan/sidebar/domotica_off.png
             style:
               left: 11.7%
               top: 42%
@@ -4975,7 +4975,7 @@ views:
           #########################    Overlay shadow images    #########################
             
           - action: none
-            image: /local/ui/sidebar/sideShadow.png
+            image: /local/ndr_floorplan/sidebar/sideShadow.png
             style:
               height: 35%
               left: 18.45%
@@ -4984,7 +4984,7 @@ views:
               width: 10%
             type: image
           - action: none
-            image: /local/ui/sidebar/sidebarInnerShadow.png
+            image: /local/ndr_floorplan/sidebar/sidebarInnerShadow.png
             style:
               left: 22.83%
               opacity: 0.7
@@ -5006,7 +5006,7 @@ views:
     panel: true
     cards:
       - type: picture-elements    
-        image: /local/ui/blurredFloorplan.png
+        image: /local/ndr_floorplan/blurredFloorplan.png
         style: |
           ha-card {
             background: rgba(42, 46, 48, 1)
@@ -5331,7 +5331,7 @@ views:
           - action: none
             hold_action:
               action: none
-            image: /local/ui/sidebar/sidebar_xl.png
+            image: /local/ndr_floorplan/sidebar/sidebar_xl.png
             style:
               height: 100%
               left: 11.73828125%
@@ -5378,7 +5378,7 @@ views:
           #########################    MENU BUTTONS    #########################
 
           - action: none
-            image: /local/ui/sidebar/up_2s.gif
+            image: /local/ndr_floorplan/sidebar/up_2s.gif
             style:
               left: 11.7%
               top: 26%
@@ -5388,7 +5388,7 @@ views:
               navigation_path: /ndr-tabletui/home
             type: image 
           - action: none
-            image: /local/ui/sidebar/system_off.png
+            image: /local/ndr_floorplan/sidebar/system_off.png
             style: 
               left: 11.7%
               top: 34%
@@ -5398,7 +5398,7 @@ views:
               navigation_path: /ndr-tabletui/system
             type: image
           - action: none
-            image: /local/ui/sidebar/domotica_on.png
+            image: /local/ndr_floorplan/sidebar/domotica_on.png
             style:
               border-radius: 5vw
               box-shadow: '0px 0.2vw 0.8vw 0px rgba(0,0,0,0.1)'
@@ -5595,7 +5595,7 @@ views:
           #########################    Overlay shadow images    #########################
             
           - action: none
-            image: /local/ui/sidebar/sideShadow.png
+            image: /local/ndr_floorplan/sidebar/sideShadow.png
             style:
               height: 35%
               left: 18.45%
@@ -5604,7 +5604,7 @@ views:
               width: 10%
             type: image
           - action: none
-            image: /local/ui/sidebar/sidebarInnerShadow.png
+            image: /local/ndr_floorplan/sidebar/sidebarInnerShadow.png
             style:
               left: 22.83%
               opacity: 0.7

@@ -1,0 +1,144 @@
+automation:
+
+      ####################################################
+      #                                                  #
+      #                CONDITIONAL MEDIA                 #
+      #                                                  #
+      ####################################################
+
+  - alias: NdR TabletUI - conditional_media_playing
+    initial_state: true
+    mode: restart
+    trigger:
+      - platform: state
+        entity_id:
+          ['media_player.appletv_soggiorno', 'media_player.tv_sala', 
+          'media_player.sala']
+        to: playing
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.conditional_media
+          option: >
+            {{ trigger.to_state.name }}
+
+  
+  - alias: NdR TabletUI - conditional_media_paused_idle
+    initial_state: true
+    mode: restart
+    trigger:
+      - platform: state
+        entity_id:
+          ['media_player.appletv_soggiorno', 'media_player.tv_sala', 
+          'media_player.sala']
+        to:
+          ['off', 'idle', 'standby']
+      - platform: state
+        entity_id:
+          ['media_player.appletv_soggiorno', 'media_player.tv_sala', 
+          'media_player.sala']
+        to: paused
+        for:
+          minutes: 10
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.conditional_media
+          option: >
+            {% set media_players = 
+              [states.media_player.appletv_soggiorno, states.media_player.tv_sala, 
+               states.media_player.sala] %}
+            {% if media_players | selectattr('state','eq','playing') | list | count == 0 %}
+              {% if media_players | selectattr('state','eq','paused') | list | count == 0 %}
+              Recenti
+              {% else %}
+              {{ media_players | selectattr('state','eq','paused') | map(attribute='name') | max }}
+              {% endif %}
+            {% else %}
+            {{ media_players | selectattr('state','eq','playing') | map(attribute='name') | max }}
+            {% endif %}
+
+
+  - alias: NdR TabletUI - conditional_media_all_off
+    initial_state: true
+    trigger:
+      - platform: template
+        value_template: >
+          {{ is_state('media_player.appletv_soggiorno', 'idle') and
+          is_state('media_player.tv_sala', 'idle') and
+          is_state('media_player.sala', 'standby') and 
+          or
+          is_state('media_player.appletv_soggiorno', 'off') and
+          is_state('media_player.tv_sala', 'off') and
+          is_state('media_player.sala', 'off') }}
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.conditional_media
+          option: Recenti
+
+
+  - alias: NdR TabletUI - conditional_media_atv1_fix
+    initial_state: true
+    trigger:
+      - platform: template
+        value_template: >
+          {{ is_state('media_player.appletv_soggiorno', 'paused') and 
+          is_state_attr('media_player.appletv_soggiorno', 'media_title', 'No title') }}
+        for:
+          seconds: 5
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.conditional_media
+          option: >
+            {% set media_players = 
+              [states.media_player.appletv_soggiorno, states.media_player.sala] %}
+            {% if media_players | selectattr('state','eq','playing') | list | count == 0 %}
+              {% if media_players | selectattr('state','eq','paused') | list | count == 0 %}
+              Recenti
+              {% elif is_state('media_player.appletv_soggiorno', 'paused') and 
+              is_state_attr('media_player.appletv_soggiorno', 'media_title', 'No title') or
+              is_state('media_player.tv_sala', 'paused') and 
+              is_state_attr('media_player.tv_sala', 'media_title', 'No title')
+              %}
+              Recenti
+              {% else %}
+              {{ media_players | selectattr('state','eq','paused') | map(attribute='name') | max }}
+              {% endif %}
+            {% else %}
+            {{ media_players | selectattr('state','eq','playing') | map(attribute='name') | max }}
+            {% endif %}
+
+
+  - alias: NdR TabletUI - conditional_media_atv2_fix
+    initial_state: true
+    trigger:
+      - platform: template
+        value_template: >
+          {{ is_state('media_player.tv_sala', 'paused') and 
+          is_state_attr('media_player.tv_sala', 'media_title', 'No title') }}
+        for:
+          seconds: 5
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.conditional_media
+          option: >
+            {% set media_players = 
+              [states.media_player.appletv_soggiorno, states.media_player.sala] %}
+            {% if media_players | selectattr('state','eq','playing') | list | count == 0 %}
+              {% if media_players | selectattr('state','eq','paused') | list | count == 0 %}
+              Recenti
+              {% elif is_state('media_player.appletv_soggiorno', 'paused') and 
+              is_state_attr('media_player.appletv_soggiorno', 'media_title', 'No title') or
+              is_state('media_player.tv_sala', 'paused') and 
+              is_state_attr('media_player.tv_sala', 'media_title', 'No title')
+              %}
+              Recenti
+              {% else %}
+              {{ media_players | selectattr('state','eq','paused') | map(attribute='name') | max }}
+              {% endif %}
+            {% else %}
+            {{ media_players | selectattr('state','eq','playing') | map(attribute='name') | max }}
+            {% endif %}
