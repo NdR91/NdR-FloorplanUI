@@ -98,11 +98,13 @@ Il risultato che otterrete sarà un progetto con un layer per ogni immagine aggi
 Screenshot
 </details>
 - Ogni immagine appartenente ad una luce accesa, dovrà contenere **solo** la stanza appartenente a quella luce.
+
 >Quindi, se per esempio prendiamo una luce in Salotto, dovrà rimanere soltanto un'immagine del salotto con quella luce accesa
 <details><summary>Esempi:</summary>
 Screenshot
 </details>
 - BONUS: delle due immagini *totali*, ritagliare soltanto l'interno della casa (nel caso in cui abbiate disegnato anche balconi/terrazze/giardini).
+
 >Queste due immagini aggiuntive possono servire nel caso in cui si decida di inserire una gif in overlay durante le giornate di pioggia. Vedremo questa "aggiunta" nei paragrafi successivi
 ><details><summary>Esempi:</summary>
 >Screenshot
