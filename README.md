@@ -105,5 +105,5 @@ Screenshot
 - BONUS: delle due immagini *totali*, ritagliare soltanto l'interno della casa (nel caso in cui abbiate disegnato anche balconi/terrazze/giardini).
 >Queste due immagini aggiuntive possono servire nel caso in cui si decida di inserire una gif in overlay durante le giornate di pioggia. Vedremo questa "aggiunta" nei paragrafi successivi
 ><details><summary>Esempi:</summary>
-Screenshot
-</details>
+>Screenshot
+></details>
