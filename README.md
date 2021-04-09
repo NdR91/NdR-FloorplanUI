@@ -88,25 +88,26 @@ Le istruzioni specifiche per l'utilizzo di questo software non saranno trattate 
 
 Una volta completata la propria planimetria con il livello di dettaglio desiderato, si potrà passare alla creazione delle immagini.
 >Attenzione: oltre alla planimetria, è necessario inserire i punti luce che si vorranno mostrare nella nostra Dashboard. I punti luce possono essere dei modelli, nel caso in cui vogliate mostrare anche l'oggetto (lampada, faretto ecc..), oppure delle fonti di luce "invisibili". Anche in questo caso, a voi la scelta.  
+
 ><details><summary>Tipi di luce</summary>
 ><img src="/www/ndr_floorplan/Screenshot/swt-luci.jpg" width="300" /> 
 > </details>
 
 La planimetria completata sarà simile alla seguente:
-
+<p align="center">
 <img src="/www/ndr_floorplan/Screenshot/swt-plan.jpg" width="300" /> 
-
+</p>
 Ora, il punto fondamentale: la creazione delle immagini che useremo nel nostro Floorplan.
 Per fare questo, dovrete "posizionarvi" in un punto il più centrale possibile all'interno della vostra planimetria.
 Per farlo, utilizzate il menu **"Vista 3D --> Vista Virtuale"**, o semplicemente **Ctrl+Shift+D** (Windows) / **Shift+Cmd+D** (Mac OS).
-
+<p align="center">
 <img src="/www/ndr_floorplan/Screenshot/swt-vst.jpg" width="300" /> 
-
+</p>
 Una volta entrati nella modalità Vista Virtuale, apparirà un indicatore a forma di "uomo" che potrete posizionare a vostro piacimento.
 Importante: una volta decisi tutti i parametri *"X, Y, Altezza Occhi, Angoli..."* segnateveli. Dovranno essere sempre identici per ogni immagine che creerete, anche in futuro per eventuali aggiornamenti.
-
+<p align="center">
 <img src="/www/ndr_floorplan/Screenshot/swt-sgn.jpg" width="300" /> 
-
+</p>
 Settata la posizione, non resta che generare le immagini. Il totale delle immagini che vi serviranno equivale ad 1 + No. di Luci che avete (+1 opzionale).
 >Esempio:
 >Nel caso in cui aveste 10 punti luce da gestire, avrete 11 o 12 foto in totale:
@@ -120,7 +121,7 @@ Il mio consiglio è di generare la foto notturna impostando l'orario tra le 20:0
 Per la stessa ragione, per la foto di giorno consiglio di impostare l'orario alle 05:00 circa.
 >La scelta dell'orario è soggettiva e cambierà significativamente i colori delle immagini che andrete a creare. Vi consiglio di fare qualche prova e verificare che la resa sia di vostro gradimento, soprattutto per quelle notturne che, se troppo scure, renderanno indistinguibili le stanze della vostra planimetria.
 
-<img src="/www/ndr_floorplan/Screenshot/swt-img.jpg" width="500" /> <img src="/www/ndr_floorplan/Screenshot/swt-stg.jpg" width="200" /> 
+<img src="/www/ndr_floorplan/Screenshot/swt-img.png" width="500" /> <img src="/www/ndr_floorplan/Screenshot/swt-stg.jpg" width="200" /> 
 
 <details><summary>Screenshot:</summary>
 Screenshot
