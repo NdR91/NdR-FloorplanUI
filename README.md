@@ -39,7 +39,8 @@ Questa card, in realtà, ha un meccanismo molto semplice:
 >      left: 40%
 > ```
 >
-><img src="/www/ndr_floorplan/Screenshot/pic_el1.jpg" width="300" /> 
+><img src="/www/ndr_floorplan/Screenshot/pic_el1.jpg" width="300" />   
+>
 >Notare come l'elemento si sovrappone all'immagine principale, ovvero la planimetria.
 >2. Picture Elements con due elementi:
 >
@@ -58,6 +59,8 @@ Questa card, in realtà, ha un meccanismo molto semplice:
 >      top: 32%
 >      left: 40%
 > ```
+><img src="/www/ndr_floorplan/Screenshot/pic_el2.jpg" width="300" />   
+>
 > In questo caso, il secondo elemento (image) sovrasta il primo.
 ></details>
 
