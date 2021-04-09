@@ -94,16 +94,16 @@ Quello che dovrete fare, è aggiungerle tutte in un unico progetto di Photoshop 
 Il risultato che otterrete sarà un progetto con un layer per ogni immagine aggiunta; ogni layer dovrà essere "ritagliato" come segue:
 - Le due immagini "totali" giorno e notte dovranno essere tagliate nel perimetro. 
 >In sostanza dovrete eliminare il "fondo" grigio lasciato da SweetHome3D
-<details><summary>Esempio:</summary>
-Screenshot
-</details>
+><details><summary>Esempio:</summary>
+>Screenshot
+></details>
 
 - Ogni immagine appartenente ad una luce accesa, dovrà contenere **solo** la stanza appartenente a quella luce.
 
 >Quindi, se per esempio prendiamo una luce in Salotto, dovrà rimanere soltanto un'immagine del salotto con quella luce accesa
-<details><summary>Esempio:</summary>
-Screenshot
-</details>
+><details><summary>Esempio:</summary>
+>Screenshot
+></details>
 
 
 - BONUS: delle due immagini *totali*, ritagliare soltanto l'interno della casa (nel caso in cui abbiate disegnato anche balconi/terrazze/giardini).
@@ -112,3 +112,6 @@ Screenshot
 ><details><summary>Esempio:</summary>
 >Screenshot
 ></details>
+
+A questo punto non dovrete fare altro che esportare ogni singolo layer come singola immagine .png, rinominandole come preferite (tenendo conto del fatto che, nel vostro file .yaml, dovrete inserire i percorsi di ognuna di esse).
+
