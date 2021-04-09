@@ -1,0 +1,50 @@
+# Sensors
+sensor:
+  # Template
+  - platform: template
+    sensors:
+      # Sunlight % - Calculates daylight brightness out of 100%
+      sunlight_pct:
+        value_template: >-
+          {%- set elevation = state_attr('sun.sun','elevation') | float %}
+          {%- set cloud_coverage = states('sensor.dark_sky_cloud_coverage') | float %}
+          {%- set cloud_factor = (1 - (0.75 * ( cloud_coverage / 100) ** 3 )) %}
+          {%- set min_elevation = -6 %}
+          {%- set max_elevation = 90 %}
+          {%- set adjusted_elevation = elevation - min_elevation %}
+          {%- set adjusted_elevation = [adjusted_elevation,0] | max %}
+          {%- set adjusted_elevation = [adjusted_elevation,max_elevation - min_elevation] | min %}
+          {%- set adjusted_elevation = adjusted_elevation / (max_elevation - min_elevation) %}
+          {%- set adjusted_elevation = adjusted_elevation %}
+          {%- set adjusted_elevation = adjusted_elevation * 100 %}
+          {%- set brightness = adjusted_elevation * cloud_factor %}
+          {{ brightness | round }}
+        unit_of_measurement: '%'
+        device_class: 'illuminance'
+      # ------------------------------------------------------------------------------------------------------
+      # Sunlight Opacity - Daylight brightness converted to opacity for CSS
+      sunlight_opacity:
+        value_template: >-
+          {%- set sunpct = states('sensor.sunlight_pct') | float %}
+          {%- set opacity = sunpct / 100 | float %}
+          {{ opacity }}
+      # ------------------------------------------------------------------------------------------------------
+      # Date: Day
+      sidebar_day:
+        icon_template: mdi:calendar
+        value_template: >
+          {% set weekday = as_local(states.sensor.date.last_changed).strftime('%w') | int %}
+          {% set days = ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato', 'Domenica'] %}
+          {{ days[weekday - 1] }}
+      # ------------------------------------------------------------------------------------------------------
+      # Date: Month
+      sidebar_date2:
+        icon_template: mdi:calendar
+        value_template: >
+          {% set year = as_local(states.sensor.date.last_changed).strftime('%Y') | int %}
+          {% set month = as_local(states.sensor.date.last_changed).strftime('%m') | int %}
+          {% set day = as_local(states.sensor.date.last_changed).strftime('%d') | int %}
+          {% set months = ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 
+          'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'] %}
+          {{ day }} {{ months[month - 1] }} {{ year }}
+      # ------------------------------------------------------------------------------------------------------

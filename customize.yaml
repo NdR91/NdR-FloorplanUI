@@ -1,0 +1,78 @@
+  person.andrea:
+    entity_picture: /local/propic/andre.jpg
+  person.mary:
+    entity_picture: /local/propic/mary.jpg
+  person.roby:
+    entity_picture: /local/propic/roby.jpg
+  person.ary:
+    entity_picture: /local/propic/ary.jpg
+  person.lina:
+    entity_picture: /local/propic/lina.jpg
+  person.gerry:
+    entity_picture: /local/propic/gerry.jpg
+  person.nonna_lucia:
+    entity_picture: /local/propic/nlucia.jpg
+  person.lucia:
+    entity_picture: /local/propic/lucia.jpg
+  person.luca:
+    entity_picture: /local/propic/luca.jpg
+  sensor.pc:
+    icon: mdi:desktop-tower-monitor
+  sensor.ipad:
+    icon: mdi:tablet-ipad
+  sensor.macbook:
+    icon: mdi:laptop-mac
+  switch.pc_studio:
+    icon: mdi:desktop-tower-monitor
+  sensor.shelly_new_firmware:
+    icon: mdi:alert-decagram
+  script.update_shelly:
+    icon: 'mdi:update'
+  sensor.omv_uptime:
+    icon: mdi:nas
+  light.luce1:
+    friendly_name: Luce 1
+    icon: 'mdi:ceiling-light'
+  light.luce2:
+    friendly_name: Luce 2
+    icon: 'mdi:ceiling-light'
+  light.led_scale:
+    friendly_name: Led Scale
+    icon: 'mdi:led-strip-variant'
+  light.faretti:
+    friendly_name: Faretti
+    icon: 'mdi:string-lights'
+  light.led_cucina:
+    friendly_name: Led Cucina
+    icon: 'mdi:led-strip-variant'
+  light.luce_giardino:
+    friendly_name: Luce Giardino
+    icon: 'mdi:coach-lamp'  
+  light.luce_camera:
+    friendly_name: Luce Camera
+    icon: 'mdi:string-lights'
+  light.luce_bagno:
+    friendly_name: Luce Bagno
+    icon: 'mdi:ceiling-light'
+  light.luce_studio:
+    friendly_name: Luce Studio
+    icon: 'mdi:spotlight-beam'
+  climate.daikin_sala:
+    friendly_name: Daikin Sala
+    type: thermostat
+  climate.daikin_camera:
+    friendly_name: Daikin Camera
+    type: thermostat
+  climate.daikin_studio:
+    friendly_name: Daikin Studio
+    type: thermostat
+  light.albero_di_natale:
+    icon: 'mdi:pine-tree'
+  media_player.tv_sala:
+    firnedly_name: TV Sala
+    device_class: tv
+    source_list: [HDMI1, LiveTV, Netflix, YouTube]
+  sensor.umidita_cucina:
+    device_class: humidity 
+
+

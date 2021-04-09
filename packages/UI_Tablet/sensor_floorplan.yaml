@@ -1,0 +1,91 @@
+sensor:
+    
+    ####################################################
+    #                                                  #
+    #                     TEMPLATE                     #
+    #                                                  #
+    ####################################################
+
+  - platform: template
+    sensors:
+      sidebar_greeting:
+        value_template: >
+          {% set time = as_timestamp(states.sensor.time.last_changed | as_local) | timestamp_custom('%H') | int %}
+          {% if time <= 1 %} Buona Notte {{'\U0001F611'}}
+          {% elif time <= 3 %} Buona Notte {{'\U0001F62A'}}
+          {% elif time <= 5 %} Buona Notte {{'\U0001F634'}}
+          {% elif time <= 7 %} Buongiorno {{'\U0001F4A9'}}
+          {% elif time <= 9 %} Buongiorno {{'\u2615\uFE0F'}}
+          {% elif time <= 10 %} Buongiorno {{'\U0001F642'}}
+          {% elif time <= 13 %} Buona Giornata {{'\U0001F60A'}}
+          {% elif time <= 15 %} Buona Giornata {{'\U0001F60E'}}
+          {% elif time <= 17 %} Buona Giornata {{'\U0001F44B\U0001F3FB'}}
+          {% elif time <= 19 %} Buona Sera {{'\U0001F44B\U0001F3FB'}}
+          {% elif time <= 22 %} Buona Sera {{'\U0001F60C'}}
+          {% elif time <= 23 %} Buona Sera {{'\U0001F974'}}
+          {% else %} Buona Sera {{'\U0001F974'}}
+          {% endif %}
+
+      sidebar_active:
+        value_template: >
+          {% set lights = [states.light.faretti, states.light.led_cucina, states.light.led_scale, states.light.luce1, 
+          states.light.luce2, states.light.luce_bagno, states.light.luce_camera, states.light.luce_giardino, 
+          states.light.luce_studio] %}
+          {% set lights_on = lights | selectattr('state','eq','on') | list %}
+          {% set lights_name = lights | selectattr('state','eq','on') | map(attribute='name') | join(', ') %}
+
+          {% set switches = [states.switch.cappa, states.switch.ciabatta_tv_main_ch, states.switch.ciabatta_tv_1, 
+          states.switch.ciabatta_tv_2, states.switch.ciabatta_tv_3, states.switch.ciabatta_tv_4, states.switch.ciabatta_tv_usb] %}
+          {% set switches_on = switches | selectattr('state','eq','on') | list %} 
+          {% set switches_name = switches | selectattr('state','eq','on') | map(attribute='name') | join(', ') %}
+
+          {% if (lights_on | length == 0) and (switches_on | length > 0) %} 
+          {{ switches_name | regex_replace(',([^,]*)$',' e\\1') }} sono accesi
+
+          {% elif (lights_on | length == 1) and (switches_on | length == 1) %}
+          {{ lights_name }} e {{switches_name }} sono accesi
+
+          {% elif (lights_on | length == 1) and (switches_on | length > 1) %}
+          {{ lights_name }}, {{ switches_name | regex_replace(',([^,]*)$',' e\\1') }} sono accesi
+
+          {% elif (lights_on | length > 1) and (switches_on | length == 1) %}
+          {{ lights_on | length }} luci e {{ switches_name }} sono accesi
+
+          {% elif (lights_on | length > 1) and (switches_on | length > 1) %}
+          {{ lights_on | length }} luce, {{ switches_name | regex_replace(',([^,]*)$',' e\\1') }} sono accesi
+
+          {% elif (lights_on | length == 1) and (switches_on | length == 0) %}
+          {{ lights_name }} è accesa
+
+          {% elif (lights_on | length > 1) and (switches_on | length == 0) %}
+          {{ lights_on | length}} la luce è accesa
+
+          {% else %} 
+          <font color='#6a7377'>E' tutto spento</font> 
+          {% endif %}
+
+    ####################################################
+    #                                                  #
+    #                      DATE                        #
+    #                                                  #
+    ####################################################
+
+      sidebar_date:
+        icon_template: mdi:calendar
+        value_template: >
+          {% set month = as_local(states.sensor.date.last_changed).strftime('%m') | int %}
+          {% set day = as_local(states.sensor.date.last_changed).strftime('%d') | int %}
+          {% set months = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 
+          'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'] %}
+          {{ day }} {{ months[month - 1] }}
+
+    ####################################################
+    #                                                  #
+    #                 APPLE TV TITLE                   #
+    #                                                  #
+    ####################################################
+
+      titolo_appletv:
+        friendly_name: 'Titolo AppleTV'
+        value_template: >
+          '{{ state_attr('media_player.appletv_soggiorno', 'media_title') }}'
