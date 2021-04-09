@@ -113,5 +113,5 @@ Il risultato che otterrete sarà un progetto con un layer per ogni immagine aggi
 >Screenshot
 ></details>
 
-A questo punto non dovrete fare altro che esportare ogni singolo layer come singola immagine .png, rinominandole come preferite (tenendo conto del fatto che, nel vostro file .yaml, dovrete inserire i percorsi di ognuna di esse).
+A questo punto non dovrete fare altro che esportare ogni layer come singola immagine .png, rinominandole come preferite (tenendo conto del fatto che, nel vostro file .yaml, dovrete inserire i percorsi di ognuna di esse).
 
