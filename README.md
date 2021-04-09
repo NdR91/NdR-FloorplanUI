@@ -69,14 +69,11 @@ Importante: una volta decisi tutti i parametri *"X, Y, Altezza Occhi, Angoli..."
 >Screenshot
 
 Settata la posizione, non resta che generare le immagini. Il totale delle immagini che vi serviranno equivale ad 1 + No. di Luci che avete (+1 opzionale).
+
 >Esempio:
-
 >Nel caso in cui aveste 10 punti luce da gestire, avrete 11 o 12 foto in totale:
-
->-La prima immagine, sarà sempre la vostra planimetria di notte, con tutte le luci spente;
-
->-L'ultima, quella opzionale, sarà la vosra planimetria di giorno, sempre a luci spente;
-
->-Le restanti immagini saranno le vostre luci accese (una foto per luce accesa).
+> - La prima immagine, sarà sempre la vostra planimetria di notte, con tutte le luci spente;
+> - L'ultima, quella opzionale, sarà la vosra planimetria di giorno, sempre a luci spente;
+> - Le restanti immagini saranno le vostre luci accese (una foto per luce accesa).
 
 # Dashboard, Sidebar e Menu
