@@ -26,6 +26,8 @@ Questa card, in realtà, ha un meccanismo molto semplice:
 - Ogni elemento/layer sarà inserito nello stesso ordine secondo il quale è stato inserito nel vostro file .yaml. Questo significa che due elementi immagine messi uno sopra l'altro (e nella stessa posizione, ma questo lo vedremo dopo) si sovrasteranno. Se la seconda immagine (elemento) inserita nel file .yaml è più grande della precedente, essa la coprirà completamente;
 - Gli elementi possono essere di svariati generi. In questa repo troverete prevalentemente Immagini e Button Cards.
 
+>Screenshot
+
 Detto questo, una cosa importante da sapere è che le immagini che andremo a creare per il nostro floorplan avranno dimensioni specifiche per il dispositivo che userete per visualizzare questa dashboard. Per questa ragione, questo metodo non ha alcuna possibilità di essere scalabile per diverse risoluzioni.
 >Le immagini che troverete in questa repo sono state creaate per una risoluzione di 2388×1668 pixel (iPad Pro 11")
 
@@ -46,9 +48,24 @@ Sul sito ufficiale, oltre al download gratuito del software, troverete anche una
 
 Le istruzioni specifiche per l'utilizzo di questo software non saranno trattate su questa repo, per cui vi consiglio di fare una semplice ricerca sul web.
 
-Una volta completata la propria planimetria, con il livello di dettaglio desiderato si potrà passare alla creazione delle immagini.
+Una volta completata la propria planimetria con il livello di dettaglio desiderato, si potrà passare alla creazione delle immagini.
 >Attenzione: oltre alla planimetria, è necessario inserire i punti luce che si vorranno mostrare nella nostra Dashboard. I punti luce possono essere dei modelli, nel caso in cui vogliate mostrare anche l'oggetto (lampada, faretto ecc..), oppure delle fonti di luce "invisibili". Anche in questo caso, a voi la scelta.
 
->Screenshot da inserire
+>Screenshot
+
+La planimetria completata sarà simile alla seguente:
+
+>Screenshot
+
+Ora, il punto fondamentale: la creazione delle immagini che useremo nel nostro Floorplan.
+Per fare questo, dovrete "posizionarvi" in un punto il più centrale possibile all'interno della vostra planimetria.
+Per farlo, utilizzate il menu "Vista 3D --> Vista Virtuale", o semplicemente Ctrl+Shift+D.
+
+>Screenshot
+
+Una volta entrati nella modalità Vista Virtuale, apparirà un indicatore a forma di "uomo" che potrete posizionare a vostro piacimento.
+Importante: una volta decisi tutti i parametri *"X, Y, Altezza Occhi, Angoli..."* segnateveli. Dovranno essere sempre identici per ogni immagine che creerete, anche in futuro per eventuali aggiornamenti.
+
+>Screenshot
 
 # Dashboard, Sidebar e Menu
