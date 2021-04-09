@@ -24,6 +24,24 @@ Questa card, in realtà, ha un meccanismo molto semplice:
 - Avrà **sempre** un'immagine di sfondo e degli elementi posti **sopra** di essa;
 - Ogni elemento creerà come una sorta di layer aggiuntivo;
 - Ogni elemento/layer sarà inserito nello stesso ordine secondo il quale è stato inserito nel vostro file .yaml. Questo significa che due elementi immagine messi uno sopra l'altro (e nella stessa posizione, ma questo lo vedremo dopo) si sovrasteranno. Se la seconda immagine (elemento) inserita nel file .yaml è più grande della precedente, essa la coprirà completamente;
+
+><details><summary>Esempio</summary>
+>Picture Entity con un Badge come elemento:
+>
+> ```yaml
+>type: picture-elements
+>elements:
+>  - type: state-badge
+>    entity: binary_sensor.stato_asciugatrice
+>    style:
+>      top: 32%
+>      left: 40%
+>image: 'https://demo.home-assistant.io/stub_config/floorplan.png'
+> ```
+>
+><img src="/www/ndr_floorplan/Screenshot/pic_el1.jpg" width="600" /> 
+></details>
+
 - Gli elementi possono essere di svariati generi. In questa repo troverete prevalentemente Immagini e Button Cards.
 
 >Screenshot
