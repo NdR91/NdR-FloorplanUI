@@ -135,14 +135,14 @@ Il risultato che otterrete sarà un progetto con un layer per ogni immagine aggi
 - Le due immagini "totali" giorno e notte dovranno essere tagliate nel perimetro. 
 >In sostanza dovrete eliminare il "fondo" grigio lasciato da SweetHome3D
 ><details><summary>Esempio:</summary>
-><img src="/www/ndr_floorplan/Screenshot/casa-notte.png" width="500" /> 
+><img src="/www/ndr_floorplan/Screenshot/casa-notte.png" width="600" /> 
 ></details>
 
 - Ogni immagine appartenente ad una luce accesa, dovrà contenere **solo** la stanza appartenente a quella luce.
 
 >Quindi, se per esempio prendiamo una luce in Salotto, dovrà rimanere soltanto un'immagine del salotto con quella luce accesa
 ><details><summary>Esempio:</summary>
-><img src="/www/ndr_floorplan/Screenshot/sala_faretti.png" width="500" /> 
+><img src="/www/ndr_floorplan/Screenshot/sala_faretti.png" width="600" /> 
 ></details>
 
 
@@ -150,8 +150,10 @@ Il risultato che otterrete sarà un progetto con un layer per ogni immagine aggi
 
 >Queste due immagini aggiuntive possono servire nel caso in cui si decida di inserire una gif in overlay durante le giornate di pioggia. Vedremo questa "aggiunta" nei paragrafi successivi
 ><details><summary>Esempio:</summary>
-><img src="/www/ndr_floorplan/Screenshot/zona-giorno.png" width="500" /> 
-><img src="/www/ndr_floorplan/Screenshot/zona-notte.png" width="500" /> 
+>Casa di giorno con balcone escluso:
+><img src="/www/ndr_floorplan/Screenshot/interno-giorno.png" width="600" /> 
+>Casa di notte con balcone escluso:
+><img src="/www/ndr_floorplan/Screenshot/interno-notte.png" width="600" /> 
 ></details>
 
 A questo punto non dovrete fare altro che esportare ogni layer come singola immagine .png, rinominandole come preferite (tenendo conto del fatto che, nel vostro file .yaml, dovrete inserire i percorsi di ognuna di esse).
