@@ -26,6 +26,9 @@ Questa card, in realtà, ha un meccanismo molto semplice:
 - Ogni elemento/layer sarà inserito nello stesso ordine secondo il quale è stato inserito nel vostro file .yaml. Questo significa che due elementi immagine messi uno sopra l'altro (e nella stessa posizione, ma questo lo vedremo dopo) si sovrasteranno. Se la seconda immagine (elemento) inserita nel file .yaml è più grande della precedente, essa la coprirà completamente;
 - Gli elementi possono essere di svariati generi. In questa repo troverete prevalentemente Immagini e Button Cards.
 
+Detto questo, una cosa importante da sapere è che le immagini che andremo a creare per il nostro floorplan avranno dimensioni specifiche per il dispositivo che userete per visualizzare questa dashboard. Per questa ragione, questo metodo non ha alcuna possibilità di essere scalabile per diverse risoluzioni.
+>Le immagini che troverete in questa repo sono state creaate per una risoluzione di 2388×1668 pixel (iPad Pro 11")
+
 ## Tema
 
 La scelta del tema, in questo caso, non è particolarmente vincolante. 
