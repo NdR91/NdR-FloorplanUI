@@ -121,7 +121,8 @@ Il mio consiglio è di generare la foto notturna impostando l'orario tra le 20:0
 Per la stessa ragione, per la foto di giorno consiglio di impostare l'orario alle 05:00 circa.
 >La scelta dell'orario è soggettiva e cambierà significativamente i colori delle immagini che andrete a creare. Vi consiglio di fare qualche prova e verificare che la resa sia di vostro gradimento, soprattutto per quelle notturne che, se troppo scure, renderanno indistinguibili le stanze della vostra planimetria.
 <p align="center">
-<img src="/www/ndr_floorplan/Screenshot/swt-img.png" width="500" /> <img src="/www/ndr_floorplan/Screenshot/swt-stg.jpg" width="300" /> 
+<img src="/www/ndr_floorplan/Screenshot/swt-img.png" width="500" /> 
+<img src="/www/ndr_floorplan/Screenshot/swt-stg.jpg" width="300" /> 
 </p>
 <details><summary>Screenshot:</summary>
 Screenshot
