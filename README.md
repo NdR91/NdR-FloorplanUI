@@ -1,11 +1,11 @@
 # NdR-FloorplanUI
-## Readme: work in progress
 
-*Screenshots:*
+#### Screenshots
+
 
 <img src="/www/ndr_floorplan/Screenshot/IMG_0595.GIF" width="600" /> <img src="/www/ndr_floorplan/Screenshot/IMG_0596.GIF" width="600" />
 
-## Premessa
+### Premessa
 
 Data l'alta richiesta di istruzioni su come creare un'interfaccia Floorplan su HomeAssistant, ho deciso di condividere qui la mia esperienza.
 Questa repo non vuole essere propriamente una guida "steb by step", ma cercherò comunque di farla il più completa possibile. 
@@ -69,11 +69,41 @@ Importante: una volta decisi tutti i parametri *"X, Y, Altezza Occhi, Angoli..."
 >Screenshot
 
 Settata la posizione, non resta che generare le immagini. Il totale delle immagini che vi serviranno equivale ad 1 + No. di Luci che avete (+1 opzionale).
-
 >Esempio:
 >Nel caso in cui aveste 10 punti luce da gestire, avrete 11 o 12 foto in totale:
-> - La prima immagine, sarà sempre la vostra planimetria di notte, con tutte le luci spente;
+> - La prima immagine, sarà la vostra planimetria di notte, con tutte le luci spente;
 > - L'ultima, quella opzionale, sarà la vosra planimetria di giorno, sempre a luci spente;
-> - Le restanti immagini saranno le vostre luci accese (una foto per luce accesa).
+> - Le restanti immagini saranno le vostre luci accese (una foto per luce accesa, di notte).
 
-# Dashboard, Sidebar e Menu
+Le immagini si possono generare tramite il Menu *"Crea Foto"* (Icona con la Macchina Fotografica nera), andando ad inserire le impostazioni di risoluzione desidetare. 
+Molto importante sarà la selezione dell'orario in cui "simulare" la nostra foto, perchè questo andrà ad incidere direttamente sulla quantità di luce presente.
+Il mio consiglio è di generare la foto notturna impostando l'orario tra le 19:00 e le 20:00 circa, altrimenti la rappresentazione sarà completamente buia.
+Per la stessa ragione, per la foto di giorno consiglio di impostare l'orario alle 05:00 circa.
+>La scelta dell'orario è soggettiva e cambierà significativamente i colori delle immagini che andrete a creare. Vi consiglio di fare qualche prova e verificare che la resa sia di vostro gradimento, soprattutto per quelle notturne che, se troppo scure, renderanno indistinguibili le stanze della vostra planimetria.
+
+<details><summary>Esempi:</summary>
+Screenshot
+</details>
+
+### Elaborazione Immagini (Photoshop, Gimp, ecc...)
+
+Ora che le immagini sono pronte, è arrivato il momento di elaborarle per far si che possano essere sistemate nella nostra Picture Elements.
+
+Quello che dovrete fare, è aggiungerle tutte in un unico progetto di Photoshop (io descriverò i procedimenti di quest'ultimo, ma lo stesso è replicabile su Gimp o altri software simili).
+
+Il risultato che otterrete sarà un progetto con un layer per ogni immagine aggiunta; ogni layer dovrà essere "ritagliato" come segue:
+- Le due immagini "totali" giorno e notte dovranno essere tagliate nel perimetro. 
+>In sostanza dovrete eliminare il "fondo" grigio lasciato da SweetHome3D
+<details><summary>Esempio:</summary>
+Screenshot
+</details>
+- Ogni immagine appartenente ad una luce accesa, dovrà contenere **solo** la stanza appartenente a quella luce.
+>Quindi, se per esempio prendiamo una luce in Salotto, dovrà rimanere soltanto un'immagine del salotto con quella luce accesa
+<details><summary>Esempi:</summary>
+Screenshot
+</details>
+- BONUS: delle due immagini *totali*, ritagliare soltanto l'interno della casa (nel caso in cui abbiate disegnato anche balconi/terrazze/giardini).
+>Queste due immagini aggiuntive possono servire nel caso in cui si decida di inserire una gif in overlay durante le giornate di pioggia. Vedremo questa "aggiunta" nei paragrafi successivi
+><details><summary>Esempi:</summary>
+Screenshot
+</details>
