@@ -6,6 +6,7 @@
 <img src="/www/ndr_floorplan/Screenshot/IMG_0595.GIF" width="600" />
 <img src="/www/ndr_floorplan/Screenshot/IMG_0596.GIF" width="600" />
 </p>
+
 ### Premessa
 
 Data l'alta richiesta di istruzioni su come creare un'interfaccia Floorplan su HomeAssistant, ho deciso di condividere qui la mia esperienza.
@@ -98,17 +99,20 @@ La planimetria completata sarà simile alla seguente:
 <p align="center">
 <img src="/www/ndr_floorplan/Screenshot/swt-plan.jpg" width="500" /> 
 </p>
+
 Ora, il punto fondamentale: la creazione delle immagini che useremo nel nostro Floorplan.
 Per fare questo, dovrete "posizionarvi" in un punto il più centrale possibile all'interno della vostra planimetria.
 Per farlo, utilizzate il menu **"Vista 3D --> Vista Virtuale"**, o semplicemente **Ctrl+Shift+D** (Windows) / **Shift+Cmd+D** (Mac OS).
 <p align="center">
 <img src="/www/ndr_floorplan/Screenshot/swt-vst.jpg" width="500" /> 
 </p>
+
 Una volta entrati nella modalità Vista Virtuale, apparirà un indicatore a forma di "uomo" che potrete posizionare a vostro piacimento.
 Importante: una volta decisi tutti i parametri *"X, Y, Altezza Occhi, Angoli..."* segnateveli. Dovranno essere sempre identici per ogni immagine che creerete, anche in futuro per eventuali aggiornamenti.
 <p align="center">
 <img src="/www/ndr_floorplan/Screenshot/swt-sgn.jpg" width="500" /> 
 </p>
+
 Settata la posizione, non resta che generare le immagini. Il totale delle immagini che vi serviranno equivale ad 1 + No. di Luci che avete (+1 opzionale).
 >Esempio:
 >Nel caso in cui aveste 10 punti luce da gestire, avrete 11 o 12 foto in totale:
