@@ -143,12 +143,12 @@ Ora che le immagini sono pronte, è arrivato il momento di elaborarle per far si
 Quello che dovrete fare, è aggiungerle tutte in un unico progetto, creando un layer per ogni immagine aggiunta; In questo modo le immagini si sovrapporranno perfettamente e voi non dovrete faticare per allinearle tutte:
 
 <p align="center">
-<img src="/www/ndr_floorplan/Screenshot/ps-all.png" width="500" />   
+<img src="/www/ndr_floorplan/Screenshot/ps-all.png" width="800" />   
 </p>
 
 >Attenzione: prima ancora di importare le vostre immagini sul vostro software di editing, assicuratevi di creare un progetto con la stessa risoluzione del vostro Tablet.
 ><details><summary>Esempio:</summary>
-><img src="/www/ndr_floorplan/Screenshot/ps-stg.png" width="600" /> 
+><img src="/www/ndr_floorplan/Screenshot/ps-stg.png" width="300" /> 
 ></details>
 
 ogni layer dovrà essere "ritagliato" come segue:
