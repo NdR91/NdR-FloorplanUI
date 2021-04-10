@@ -125,6 +125,8 @@ Per la stessa ragione, per la foto di giorno consiglio di impostare l'orario all
 <img src="/www/ndr_floorplan/Screenshot/swt-stg.jpg" width="300" /> 
 </p>
 
+**Importante**: scegliete accuratamente la risoluzione delle vostre immagini, la quale non solo dovrà essere pari o inferiore a quella del vostro Tablet/Display, ma dovrà tenere anche conto di eventuali elementi aggiuntivi che vorrete inserire nella vostra Dashboard. Ad esempio, se prevedete di inserire una sidebar larga 300px, allora la risoluzione delle vostre immagini dovrà essere inferiore di minimo 350px circa.
+
 Per accendere/spegnere le singole luci, basta attivare o meno il flag che troverete nell'elenco degli elementi inseriti nella vostra planimetria (barra in basso a sinistra).
 
 <details><summary>Screenshots:</summary>
@@ -138,7 +140,18 @@ Per accendere/spegnere le singole luci, basta attivare o meno il flag che trover
 
 Ora che le immagini sono pronte, è arrivato il momento di elaborarle per far si che possano essere sistemate nella nostra Picture Elements.
 
-Quello che dovrete fare, è aggiungerle tutte in un unico progetto, creando un layer per ogni immagine aggiunta; ogni layer dovrà essere "ritagliato" come segue:
+Quello che dovrete fare, è aggiungerle tutte in un unico progetto, creando un layer per ogni immagine aggiunta; In questo modo le immagini si sovrapporranno perfettamente e voi non dovrete faticare per allinearle tutte:
+
+<p align="center">
+<img src="/www/ndr_floorplan/Screenshot/ps-all.png" width="500" />   
+</p>
+
+>Attenzione: prima ancora di importare le vostre immagini sul vostro software di editing, assicuratevi di creare un progetto con la stessa risoluzione del vostro Tablet.
+><details><summary>Esempio:</summary>
+><img src="/www/ndr_floorplan/Screenshot/ps-stg.png" width="600" /> 
+></details>
+
+ogni layer dovrà essere "ritagliato" come segue:
 - Le due immagini "totali" giorno e notte dovranno essere tagliate nel perimetro. 
 >In sostanza dovrete eliminare il "fondo" grigio lasciato da SweetHome3D
 ><details><summary>Esempio:</summary>
