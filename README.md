@@ -151,7 +151,7 @@ Quello che dovrete fare, è aggiungerle tutte in un unico progetto, creando un l
 ><img src="/www/ndr_floorplan/Screenshot/ps-stg.png" width="300" /> 
 ></details>
 
-ogni layer dovrà essere "ritagliato" come segue:
+Ogni layer dovrà essere "ritagliato" come segue (su Photoshop lo strumento sarà il Lazzo Poligonale):
 - Le due immagini "totali" giorno e notte dovranno essere tagliate nel perimetro. 
 >In sostanza dovrete eliminare il "fondo" grigio lasciato da SweetHome3D
 ><details><summary>Esempio:</summary>
