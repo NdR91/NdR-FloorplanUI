@@ -125,6 +125,14 @@ Per la stessa ragione, per la foto di giorno consiglio di impostare l'orario all
 <img src="/www/ndr_floorplan/Screenshot/swt-stg.jpg" width="300" /> 
 </p>
 
+Per accendere/spegnere le singole luci, basta attivare o meno il flag che troverete nell'elenco degli elementi inseriti nella vostra planimetria (barra in basso a sinistra).
+
+<details><summary>Screenshots:</summary>
+<p align="center">
+<img src="/www/ndr_floorplan/Screenshot/swt-lucioff.png" width="500" /> 
+<img src="/www/ndr_floorplan/Screenshot/swt-lucion.png" width="500" /> 
+</p>
+</details>
 ### Elaborazione Immagini (Photoshop, Gimp, ecc...)
 
 Ora che le immagini sono pronte, è arrivato il momento di elaborarle per far si che possano essere sistemate nella nostra Picture Elements.
