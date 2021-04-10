@@ -156,7 +156,9 @@ Il risultato che otterrete sarà un progetto con un layer per ogni immagine aggi
 >Queste due immagini aggiuntive possono servire nel caso in cui si decida di inserire una gif in overlay durante le giornate di pioggia. Vedremo questa "aggiunta" nei paragrafi successivi
 ><details><summary>Esempio:</summary>
 >Casa di giorno con balcone escluso:
-><img src="/www/ndr_floorplan/Screenshot/interno-giorno.png" width="600" /> 
+> 
+><img src="/www/ndr_floorplan/Screenshot/interno-giorno.png" width="600" />   
+>  
 >Casa di notte con balcone escluso:
 ><img src="/www/ndr_floorplan/Screenshot/interno-notte.png" width="600" /> 
 ></details>
