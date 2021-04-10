@@ -7,6 +7,12 @@
 <img src="/www/ndr_floorplan/Screenshot/IMG_0596.GIF" width="600" />
 </p>
 
+#### Se ti piace il mio lavoro...
+
+<p align="center">
+<a href="https://www.buymeacoffee.com/Ndr91" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+</p>
+
 ### Premessa
 
 Data l'alta richiesta di istruzioni su come creare un'interfaccia Floorplan su HomeAssistant, ho deciso di condividere qui la mia esperienza.
