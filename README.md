@@ -182,9 +182,15 @@ A questo punto, se non prevedete di aggiungere ulteriori elementi (es. Sidebar),
 
 #### Sidebar
 
-Piccolo paragrafo a proposito della Sidebar.
+Piccolo paragrafo a proposito della Sidebar, in quanto anch'essa non è altro che un'immagine che andremo a sovrapporre come *elemento* alla nostra Picture Elements.
+In modo da essere sicuri che tutte le nostre immagini siano ben posizionate all'interno della nostra dashboard, aggiungete l'immagine della Sidebar (quella presente in questa repo, o una qualsiasi a vostra scelta) al vostro progetto.
+>Nota: è molto probabile che dovrete ridimensionare l'immagine in questione. Anche in questo caso sta a voi decidere quale risoluzione dare alla Sidebar, tenendo conto del fatto che dovrete inserire dei bottoni su di essa.
 
+Ora, selezionate tutti i layer relativi alla vostra planimetria e, con lo strumento *Sposta* traslateli tutti in modo che non si sovrappongano alla sidebar appena aggiunta. Anche questa operazione fa si che non dobbiate riallinearli tutti in seguito.
 
+<p align="center">
+<img src="/www/ndr_floorplan/Screenshot/ps-cmp.png" width="800" />   
+</p>
 
 # Costruzione della Dashboard
 
