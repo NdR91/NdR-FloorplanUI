@@ -2,9 +2,10 @@
 
 #### Screenshots
 
-
-<img src="/www/ndr_floorplan/Screenshot/IMG_0595.GIF" width="600" /> <img src="/www/ndr_floorplan/Screenshot/IMG_0596.GIF" width="600" />
-
+<p align="center">
+<img src="/www/ndr_floorplan/Screenshot/IMG_0595.GIF" width="600" />
+<img src="/www/ndr_floorplan/Screenshot/IMG_0596.GIF" width="600" />
+</p>
 ### Premessa
 
 Data l'alta richiesta di istruzioni su come creare un'interfaccia Floorplan su HomeAssistant, ho deciso di condividere qui la mia esperienza.
