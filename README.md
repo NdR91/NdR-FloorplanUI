@@ -71,11 +71,6 @@ Questa card, in realtà, ha un meccanismo molto semplice:
 Detto questo, una cosa importante da sapere è che le immagini che andremo a creare per il nostro floorplan avranno dimensioni specifiche per il dispositivo che userete per visualizzare questa dashboard. Per questa ragione, questo metodo non ha alcuna possibilità di essere scalabile per diverse risoluzioni.
 >Le immagini che troverete in questa repo sono state creaate per una risoluzione di 2388×1668 pixel (iPad Pro 11")
 
-## Tema
-
-La scelta del tema, in questo caso, non è particolarmente vincolante. 
-Potete crearne uno vostro, copiare quello presente in questa o in altre mie repo (es. [NdR-TabletUI](https://github.com/NdR91/NdR-TabletUI)), o semplicemente scaricare uno dei tanti presenti su HACS. Starà a voi cercare l'abbinamento corretto con i colori che userete.
-
 ## Creazione delle immagini
 Per la creazione delle immagini necessarie, sono necessari due software:
 1. SweetHome3d (o simili);
@@ -134,9 +129,7 @@ Per la stessa ragione, per la foto di giorno consiglio di impostare l'orario all
 
 Ora che le immagini sono pronte, è arrivato il momento di elaborarle per far si che possano essere sistemate nella nostra Picture Elements.
 
-Quello che dovrete fare, è aggiungerle tutte in un unico progetto di Photoshop (io descriverò i procedimenti di quest'ultimo, ma lo stesso è replicabile su Gimp o altri software simili).
-
-Il risultato che otterrete sarà un progetto con un layer per ogni immagine aggiunta; ogni layer dovrà essere "ritagliato" come segue:
+Quello che dovrete fare, è aggiungerle tutte in un unico progetto, creando un layer per ogni immagine aggiunta; ogni layer dovrà essere "ritagliato" come segue:
 - Le due immagini "totali" giorno e notte dovranno essere tagliate nel perimetro. 
 >In sostanza dovrete eliminare il "fondo" grigio lasciato da SweetHome3D
 ><details><summary>Esempio:</summary>
@@ -161,7 +154,37 @@ Il risultato che otterrete sarà un progetto con un layer per ogni immagine aggi
 >  
 >Casa di notte con balcone escluso:
 ><img src="/www/ndr_floorplan/Screenshot/interno-notte.png" width="600" /> 
-></details>
-
+></details>  
+ 
 A questo punto non dovrete fare altro che esportare ogni layer come singola immagine .png, rinominandole come preferite (tenendo conto del fatto che, nel vostro file .yaml, dovrete inserire i percorsi di ognuna di esse).
 
+# Costruzione della Dashboard
+
+Finalmente tutti gli elementi necessari per la creazione della nostra Dashboard sono pronti, quindi non ci resta che "assemblare" il tutto in un unico file.
+> *Nota: In realtà, tutto quello che troverete qui di seguito è assolutamente replicabile anche nella modalità di modifica della Dashboard integrata sul Frontend di Home Assistant. Tuttavia, il mio cionsiglio è di farlo "manualmente", ovvero in modalità yaml, in modo da poter utilizzare strumenti come Visual Studio Code. In questo modo risulta molto più semplice la gestione di un file che supererà abbondantemente le 5000 righe*
+
+## Configuration.yaml
+Per prima cosa, dovremo predisporre il nostro *configuration.yaml* per poter utilizzare **anche** le Dashboard in modalità yaml.
+
+```yaml
+lovelace:
+  # MODE
+  mode: storage
+  # ------------------------------------------------------
+  # Dashoards
+  dashboards:
+    #Floorplan UI
+    ndr-floorplan: <-- Nome a piacimento
+      mode: yaml
+      title: NdR Floorplan UI <-- Titolo a piacimento
+      icon: mdi:tablet <-- Icona a piacimento
+      show_in_sidebar: true
+      filename: ndr_floorplan.yaml <-- Nome a piacimento
+    # ----------------------------------------------------
+```
+> *Nota: molto importante la parte **mode: storage**. Questo significa che potrete utilizzare sia Dashboard create da Frontend che in modalità yaml*
+
+## Tema
+
+La scelta del tema, in questo caso, non è particolarmente vincolante. 
+Potete crearne uno vostro, copiare quello presente in questa o in altre mie repo (es. [NdR-TabletUI](https://github.com/NdR91/NdR-TabletUI)), o semplicemente scaricare uno dei tanti presenti su HACS. Starà a voi cercare l'abbinamento corretto con i colori che userete.
