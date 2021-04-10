@@ -178,7 +178,13 @@ Ogni layer dovrÃ  essere "ritagliato" come segue (su Photoshop lo strumento sarÃ
 ><img src="/www/ndr_floorplan/Screenshot/interno-notte.png" width="600" /> 
 ></details>  
  
-A questo punto non dovrete fare altro che esportare ogni layer come singola immagine .png, rinominandole come preferite (tenendo conto del fatto che, nel vostro file .yaml, dovrete inserire i percorsi di ognuna di esse).
+A questo punto, se non prevedete di aggiungere ulteriori elementi (es. Sidebar), non dovrete fare altro che esportare ogni layer come singola immagine .png, rinominandole come preferite (tenendo conto del fatto che, nel vostro file .yaml, dovrete inserire i percorsi di ognuna di esse).
+
+#### Sidebar
+
+Piccolo paragrafo a proposito della Sidebar.
+
+
 
 # Costruzione della Dashboard
 
