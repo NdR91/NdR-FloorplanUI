@@ -585,7 +585,7 @@ views:
                 width: 20.5078125%
               tap_action:
                 action: navigate
-                navigation_path: /ndr-tabletui/home
+                navigation_path: /ndr-floorplan/home
               type: image
             - action: none
               image: /local/ndr_floorplan/sidebar/devices_off.png?v=1
@@ -595,7 +595,7 @@ views:
                 width: 20.5078125%
               tap_action:
                 action: navigate
-                navigation_path: /ndr-tabletui/devices
+                navigation_path: /ndr-floorplan/devices
               type: image
             - action: none
               image: /local/ndr_floorplan/sidebar/media_off.png?v=1
@@ -605,7 +605,7 @@ views:
                 width: 20.5078125%
               tap_action:
                 action: navigate
-                navigation_path: /ndr-tabletui/media
+                navigation_path: /ndr-floorplan/media
               type: image
             - action: none
               image: /local/ndr_floorplan/sidebar/clima_off.png
@@ -615,7 +615,7 @@ views:
                 width: 20.5078125%
               tap_action:
                 action: navigate
-                navigation_path: /ndr-tabletui/clima
+                navigation_path: /ndr-floorplan/clima
               type: image
             - action: none
               image: /local/ndr_floorplan/sidebar/down_2s.gif
@@ -625,7 +625,7 @@ views:
                 width: 8%
               tap_action:
                 action: navigate
-                navigation_path: /ndr-tabletui/system
+                navigation_path: /ndr-floorplan/system
               type: image     
             
 
@@ -853,36 +853,19 @@ views:
           }
         elements:
 
-          - type: 'custom:layout-card-griddier'
-            layout: grid
-            gridcols: 50% 50%
-            gridrows: auto auto auto
-            gridareas: |
-              'card1 card3' 
-              'card2 card4' 
-              'card6 card8'
-          ### Card8 is only a placeholder    
-            gridcols_medium: 50% 50%
-            gridareas_medium: |
-              'card1 card3' 
-              'card2 card4' 
-              'card6 card8'  
-            gridcols_small: 100%
-            gridareas_small: |
-              'card0'
-              'card1' 
-              'card2'
-              'card4'
-              'card5'
-              'card6'
-              'card7'
-              'card3' 
-            column_width: 500px
+          - type: 'custom:layout-card'
+            layout_type: grid
+            layout_options:
+              grid-template-columns: 70% 30%
+              grid-template-rows: 
+              grid-template-areas: |
+                "sala giardino"
+                "cucina camera"
+                "studio bagno"
             style:
-              height: 87%
-              left: 62%
-              top: 50%
-              width: 68%
+                left: 55%
+                top: 50%
+                width: 60%
             cards:
 
 
@@ -891,11 +874,10 @@ views:
     #                       SALA                       #
     #                                                  #
     ####################################################
-              
-
-    ### CARD 1                          
-              - gridarea: card1
-                type: vertical-stack
+                                      
+              - type: vertical-stack
+                view_layout:
+                  grid-area: sala
                 cards:
                   - type: markdown
                     content: |
@@ -1077,10 +1059,10 @@ views:
     #                     CUCINA                       #
     #                                                  #
     ####################################################
-
-    ### CARD 2    
-              - gridarea: card2
-                type: vertical-stack
+  
+              - type: vertical-stack
+                view_layout:
+                    grid-area: cucina
                 cards:
                   - type: markdown
                     content: |
@@ -1306,10 +1288,10 @@ views:
     #                    GIARDINO                      #
     #                                                  #
     ####################################################
-
-    ### CARD 3    
-              - gridarea: card3
-                type: vertical-stack
+  
+              - type: vertical-stack
+                view_layout:
+                  grid-area: giardino
                 cards: 
                   - type: markdown
                     content: |
@@ -1437,10 +1419,10 @@ views:
     #                 CAMERA E BAGNO                   #
     #                                                  #
     ####################################################
-
-    ### CARD 4    
-              - gridarea: card4
-                type: horizontal-stack
+ 
+              - type: horizontal-stack
+                view_layout:
+                  grid-area: camera
                 cards:
                   - type: vertical-stack
                     cards:
@@ -1597,9 +1579,9 @@ views:
     #                                                  #
     ####################################################
 
-    ### CARD 6    
-              - gridarea: card6
-                type: vertical-stack
+              - type: vertical-stack
+                view_layout:
+                    grid-area: studio
                 cards:
                   - type: markdown
                     content: |
@@ -1833,7 +1815,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/home
+              navigation_path: /ndr-floorplan/home
             type: image
           - action: none
             image: /local/ndr_floorplan/sidebar/devices_on.png
@@ -1845,7 +1827,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/devices
+              navigation_path: /ndr-floorplan/devices
             type: image
           - action: none
             image: /local/ndr_floorplan/sidebar/media_off.png?v=1
@@ -1855,7 +1837,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/media
+              navigation_path: /ndr-floorplan/media
             type: image
           - action: none
             image: /local/ndr_floorplan/sidebar/clima_off.png
@@ -1865,7 +1847,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/clima
+              navigation_path: /ndr-floorplan/clima
             type: image
           - action: none
             image: /local/ndr_floorplan/sidebar/down_2s.gif
@@ -1875,7 +1857,7 @@ views:
               width: 8%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/system
+              navigation_path: /ndr-floorplan/system
             type: image 
 
 
@@ -3608,7 +3590,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/home
+              navigation_path: /ndr-floorplan/home
             type: image
           - action: none
             image: /local/ndr_floorplan/sidebar/devices_off.png
@@ -3618,7 +3600,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/devices
+              navigation_path: /ndr-floorplan/devices
             type: image
           - action: none
             image: /local/ndr_floorplan/sidebar/media_on.png?v=1
@@ -3630,7 +3612,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/media
+              navigation_path: /ndr-floorplan/media
             type: image
           - action: none
             image: /local/ndr_floorplan/sidebar/clima_off.png
@@ -3640,7 +3622,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/clima
+              navigation_path: /ndr-floorplan/clima
             type: image
           - action: none
             image: /local/ndr_floorplan/sidebar/down_2s.gif
@@ -3650,7 +3632,7 @@ views:
               width: 8%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/system
+              navigation_path: /ndr-floorplan/system
             type: image 
 
 
@@ -3875,162 +3857,157 @@ views:
           }
         elements:
   
-          - type: 'custom:layout-card-griddier'
-            layout: grid
-            gridcols: 50% 50%
-            gridrows: auto auto auto
-            gridareas: |
-              'card0 xxxxx'
-              'card1 card2' 
-              'card3 card4'
-            gridcols_medium: 50% 50%
-            gridareas_medium: |
-              'card0 xxxxx'
-              'card1 card2' 
-              'card3 card4' 
-          ### Card7 is only a placeholder       
-            gridcols_small: 100%
-            gridareas_small: |
-              'card0'
-              'card1' 
-              'card2'
-              'card3'
-              'card4'
-            column_width: 500px
+          - type: 'custom:layout-card'
+            layout_type: grid
+            layout_options:
+              grid-template-columns: 100%
+              grid-template-rows: 100%
+              grid-template-areas: |
+                "clima"
             style: 
               height: 87%
               left: 62%
-              top: 60%
+              top: 50%
               width: 68%
             cards:
-                    
-        ### CARD 1                
-              - gridarea: card1
-                type: 'custom:mini-graph-card'        
-                entities:
-                  - sensor.daikin_sala_inside_temperature
-                tap_action: 
-                  action: more-info
-                  entity: climate.daikin_sala
-                height: 70
-                hours_to_show: 24
-                name: Sala
-                points_per_hour: 0.5
-                show:
-                  extrema: true
-                  labels: false
-                color_thresholds_transition: hard
-                color_thresholds:
-                  - value: 0
-                    color: '#66ffff'
-                  - value: 19
-                    color: '#53ff1a'
-                  - value: 25
-                    color: '#ffff00'
-                  - value: 27
-                    color: '#ff8000'
-                  - value: 40
-                    color: '#ff0000'     
-                style: |
-                  ha-card {
-                    border-radius: 15px;
-                    } 
-                    
-        ### CARD 2                
-              - gridarea: card2
-                type: 'custom:mini-graph-card'        
-                entities:
-                  - sensor.daikin_camera_inside_temperature
-                tap_action: 
-                  action: more-info
-                  entity: climate.daikin_camera
-                height: 70
-                hours_to_show: 24
-                name: Camera
-                points_per_hour: 0.5
-                show:
-                  extrema: true
-                  labels: false
-                color_thresholds_transition: hard
-                color_thresholds:
-                  - value: 0
-                    color: '#66ffff'
-                  - value: 19
-                    color: '#53ff1a'
-                  - value: 25
-                    color: '#ffff00'
-                  - value: 27
-                    color: '#ff8000'
-                  - value: 40
-                    color: '#ff0000'     
-                style: |
-                  ha-card {
-                    border-radius: 15px;
-                    } 
-
-        ### CARD 3                
-              - gridarea: card3
-                type: 'custom:mini-graph-card'        
-                entities:
-                  - sensor.daikin_studio_inside_temperature
-                tap_action: 
-                  action: more-info
-                  entity: climate.daikin_studio
-                height: 70
-                hours_to_show: 24
-                name: Studio
-                points_per_hour: 0.5
-                show:
-                  extrema: true
-                  labels: false
-                color_thresholds_transition: hard
-                color_thresholds:
-                  - value: 0
-                    color: '#66ffff'
-                  - value: 19
-                    color: '#53ff1a'
-                  - value: 25
-                    color: '#ffff00'
-                  - value: 27
-                    color: '#ff8000'
-                  - value: 40
-                    color: '#ff0000'     
-                style: |
-                  ha-card {
-                    border-radius: 15px;
-                    } 
-
-        ### CARD 4                
-              - gridarea: card4
-                type: 'custom:mini-graph-card'        
-                entities:
-                  - sensor.openweather_temperature
-                tap_action: 
-                  action: more-info
-                  entity: climate.daikin_studio
-                height: 70
-                hours_to_show: 24
-                name: Fuori
-                points_per_hour: 0.5
-                show:
-                  extrema: true
-                  labels: false
-                color_thresholds_transition: hard
-                color_thresholds:
-                  - value: 0
-                    color: '#66ffff'
-                  - value: 14
-                    color: '#53ff1a'
-                  - value: 19
-                    color: '#ffff00'
-                  - value: 25
-                    color: '#ff8000'
-                  - value: 40
-                    color: '#ff0000'     
-                style: |
-                  ha-card {
-                    border-radius: 15px;
-                    }                     
+              - type: vertical-stack
+                view_layout:
+                  grid-area: clima
+                cards:
+                  - type: horizontal-stack
+                    cards:
+                      - type: vertical-stack
+                        cards:
+                          - type: custom:mini-climate
+                            entity: climate.daikin_sala # Change this to the entity you want to control
+                            scale: 0.85
+                            temperature:
+                              unit: '°C'
+                              source:
+                                entity: sensor.daikin_sala_inside_temperature
+                            icon: mdi:snowflake
+                            card_mod:
+                              style: |
+                                ha-card {
+                                  border-radius: 15px;
+                                  }
+                          - type: 'custom:mini-graph-card'
+                            entities:
+                              - sensor.daikin_sala_inside_temperature
+                            height: 70
+                            hours_to_show: 24
+                            name: Sala
+                            points_per_hour: 0.5
+                            line_width: 2
+                            show:
+                              extrema: true
+                              labels: false
+                            color_thresholds_transition: hard
+                            color_thresholds:
+                              - value: 5
+                                color: '#ccf2ff'
+                              - value: 15
+                                color: '#80dfff'
+                              - value: 25
+                                color: '#33ccff'
+                              - value: 30
+                                color: '#00ace6'
+                              - value: 40
+                                color: '#0099ff' 
+                            card_mod:
+                              style: |
+                                ha-card {
+                                  border-radius: 15px;
+                                  }
+                      - type: vertical-stack
+                        cards:
+                          - type: custom:mini-climate
+                            entity: climate.daikin_camera # Change this to the entity you want to control
+                            scale: 0.85
+                            temperature:
+                              unit: '°C'
+                              source:
+                                entity: sensor.daikin_camera_inside_temperature
+                            icon: mdi:snowflake
+                            card_mod:
+                              style: |
+                                ha-card {
+                                  border-radius: 15px;
+                                  }
+                          - type: 'custom:mini-graph-card'
+                            entities:
+                              - sensor.daikin_camera_inside_temperature
+                            height: 70
+                            hours_to_show: 24
+                            name: Camera
+                            points_per_hour: 0.5
+                            line_width: 2
+                            show:
+                              extrema: true
+                              labels: false
+                            color_thresholds_transition: hard
+                            color_thresholds:
+                              - value: 5
+                                color: '#ccf2ff'
+                              - value: 15
+                                color: '#80dfff'
+                              - value: 25
+                                color: '#33ccff'
+                              - value: 30
+                                color: '#00ace6'
+                              - value: 40
+                                color: '#0099ff' 
+                            card_mod:
+                              style: |
+                                ha-card {
+                                  border-radius: 15px;
+                                  }
+                      
+                  - type: vertical-stack
+                    cards:
+                      - type: custom:mini-climate
+                        entity: climate.daikin_studio # Change this to the entity you want to control
+                        scale: 0.85
+                        temperature:
+                          unit: '°C'
+                          source:
+                            entity: sensor.daikin_studio_inside_temperature
+                        icon: mdi:snowflake
+                        card_mod:
+                          style: |
+                            ha-card {
+                              border-radius: 15px;
+                              }
+                      
+                      
+                      - type: 'custom:mini-graph-card'
+                        entities:
+                          - sensor.daikin_studio_inside_temperature
+                        height: 70
+                        hours_to_show: 24
+                        name: Studio
+                        points_per_hour: 0.5
+                        line_width: 2
+                        show:
+                          extrema: true
+                          labels: false
+                        color_thresholds_transition: hard
+                        color_thresholds:
+                          - value: 5
+                            color: '#ccf2ff'
+                          - value: 15
+                            color: '#80dfff'
+                          - value: 25
+                            color: '#33ccff'
+                          - value: 30
+                            color: '#00ace6'
+                          - value: 40
+                            color: '#0099ff' 
+                        card_mod:
+                          style: |
+                            ha-card {
+                              border-radius: 15px;
+                              }               
 
   ############################################################################################
   ############################################################################################
@@ -4097,7 +4074,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/home
+              navigation_path: /ndr-floorplan/home
             type: image
           - action: none
             image: /local/ndr_floorplan/sidebar/devices_off.png
@@ -4107,7 +4084,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/devices
+              navigation_path: /ndr-floorplan/devices
             type: image
           - action: none
             image: /local/ndr_floorplan/sidebar/media_off.png?v=1
@@ -4117,7 +4094,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/media
+              navigation_path: /ndr-floorplan/media
             type: image
           - action: none
             image: /local/ndr_floorplan/sidebar/clima_on.png
@@ -4129,7 +4106,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/clima
+              navigation_path: /ndr-floorplan/clima
             type: image
           - action: none
             image: /local/ndr_floorplan/sidebar/down_2s.gif
@@ -4139,7 +4116,7 @@ views:
               width: 8%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/system
+              navigation_path: /ndr-floorplan/system
             type: image 
 
 
@@ -4364,111 +4341,35 @@ views:
           }
         elements:
           
-          - type: 'custom:layout-card-griddier'
-            layout: grid
-            gridcols: 50% 50%
-            gridrows: auto auto auto
-            gridareas: |
-              'card0 card1'
-              'card2 card3' 
-              'card4 card5'
-              'card6 card7' 
-            gridcols_medium: 50% 50%
-            gridareas_medium: |
-              'card0 card1'
-              'card2 card3' 
-              'card4 card5'
-              'card6 card7'  
-            gridcols_small: 100%
-            gridareas_small: |
-              'card0'
-              'card1' 
-              'card2'
-              'card3'
-              'card4'
-              'card5'
-              'card6'
-              'card7'
-            column_width: 500px
+          - type: 'custom:layout-card'
+            layout_type: grid
+            layout_options:
+              grid-template-columns: 50% 50%
+              grid-template-rows: 55% 45%
+              grid-template-areas: |
+                "nuc rpi"
+                "omv pihole"
             style: 
               height: 87%
               left: 62%
-              top: 55%
+              top: 50%
               width: 68%
-            cards:   
-                      
-                      
-    ####################################################
-    #                                                  #
-    #                HOME ASSISTANT                    #
-    #                                                  #
-    ####################################################  
+            cards:
 
-    ### CARD 2    
               - type: vertical-stack
-                gridarea: card2
-                cards:
-                  - type: vertical-stack
-                    cards:
-                      - type: markdown
-                        content: |
-                          # Home Assistant
-                        style:
-                          .: |
-                            ha-card {
-                              --ha-card-background: none !important;
-                              box-shadow: none !important;
-                              height: 30px;
-                            }
-                          ha-markdown:
-                            $: |
-                              h1 {
-                                font-size: 20px;
-                                font-weight: bold;
-                                font-family: Helvetica;
-                                letter-spacing: '-0.01em';
-                              }
-                      - type: markdown
-                        content: >
-                          #  Versione: {{states('sensor.hass_version_installed') }} | Disponibile: {{states('sensor.hass_version_latest') }} 
-
-                        style:
-                          .: |
-                            ha-card {
-                              --ha-card-background: none !important;
-                              box-shadow: none !important;
-                              height: 30px;
-                            }
-                          ha-markdown:
-                            $: |
-                              h1 {
-                                font-size: 15px;
-                                font-weight: thin;
-                                font-family: Helvetica;
-                                letter-spacing: '-0.01em';
-                              }
-
-
-    ####################################################
-    #                                                  #
-    #                   RASPBERRY                      #
-    #                                                  #
-    ####################################################  
-
-    ### CARD 3
-              - type: vertical-stack
-                gridarea: card3
+                view_layout:
+                  grid-area: nuc
                 cards:
                   - type: markdown
                     content: |
-                      # Raspberry:
+                      # Intel NUC
                     style:
                       .: |
                         ha-card {
                           --ha-card-background: none !important;
                           box-shadow: none !important;
+                          margin-top: 2px;
                           height: 20px;
-                          margin-top: 5px;
                         }
                       ha-markdown:
                         $: |
@@ -4477,16 +4378,17 @@ views:
                             font-weight: bold;
                             font-family: Helvetica;
                             letter-spacing: '-0.01em';
-                          }         
+                          }
                   - type: markdown
                     content: >
-                      #  Uptime: {{states('sensor.omv_uptime') }} ore | Alimentazione: {% if is_state('binary_sensor.rpi_power_status', 'off') %} OK {% else %} NON OK {% endif %} 
+                      #  Versione HA: {{states('sensor.hass_version_installed') }} | Disponibile: {{states('sensor.hass_version_latest') }} 
+
                     style:
                       .: |
                         ha-card {
                           --ha-card-background: none !important;
                           box-shadow: none !important;
-                          height: 30px;
+                          height: 70px;
                         }
                       ha-markdown:
                         $: |
@@ -4496,79 +4398,182 @@ views:
                             font-family: Helvetica;
                             letter-spacing: '-0.01em';
                           }
+                      
+                  - type: horizontal-stack
+                    cards:                       
+                    - type: 'custom:mini-graph-card'
+                      color_type: card
+                      entities:
+                        - sensor.intel_nuc_cpu_temp
+                      unit: "°C"
+                      height: 70
+                      line_width: 2
+                      hours_to_show: 24
+                      name: T° Intel NUC
+                      points_per_hour: 0.5
+                      align_state: center
+                      align_header: center
+                      show:
+                        extrema: true
+                        average: true
+                        labels: false 
+                      color_thresholds_transition: hard
+                      color_thresholds:
+                        - value: 0
+                          color: '#66ffff'
+                        - value: 40
+                          color: '#53ff1a'
+                        - value: 50
+                          color: '#ffff00'
+                        - value: 65
+                          color: '#ff8000'
+                        - value: 100
+                          color: '#ff0000'     
+                      card_mod:
+                        style: |
+                          ha-card {
+                            border-radius: 15px;
+                            height: 250px;
+                            } 
 
-    ### CARD 4                          
-              - type: 'custom:mini-graph-card'
-                gridarea: card4
-                color_type: card
-                entities:
-                  - sensor.raspberry_temp
-                height: 70
-                hours_to_show: 24
-                name: Temperatura CPU Raspberry
-                points_per_hour: 0.5
-                align_state: center
-                align_header: center
-                show:
-                  extrema: true
-                  average: true
-                  labels: false 
-                color_thresholds_transition: hard
-                color_thresholds:
-                  - value: 0
-                    color: '#66ffff'
-                  - value: 35
-                    color: '#53ff1a'
-                  - value: 45
-                    color: '#ffff00'
-                  - value: 55
-                    color: '#ff8000'
-                  - value: 100
-                    color: '#ff0000'     
-                style: |
-                  ha-card {
-                    border-radius: 15px;
-                    height: 230px;
-                    } 
+                    - type: 'custom:mini-graph-card'
+                      color_type: card
+                      entities:
+                        - entity: sensor.processor_use
+                          name: CPU
+                          color: red
+                        - entity: sensor.memory_use_percent
+                          name: RAM
+                          color: orange
+                          show_state: true
+                      height: 70
+                      line_width: 2
+                      hours_to_show: 24
+                      points_per_hour: 0.5
+                      align_state: center
+                      align_header: center
+                      name: CPU & RAM
+                      icon: mdi:cpu-64-bit
+                      show:
+                        extrema: false
+                        average: false
+                        labels: false    
+                      card_mod:
+                        style: |
+                          ha-card {
+                            border-radius: 15px;
+                            height: 250px;
+                            }          
 
-    ### CARD 5
-              - type: 'custom:mini-graph-card'
-                gridarea: card5
-                color_type: card
-                entities:
-                  - entity: sensor.processor_use
-                    name: CPU
-                    color: red
-                  - entity: sensor.memory_use_percent
-                    name: RAM
-                    color: orange
-                    show_state: true
-                height: 70
-                hours_to_show: 24
-                points_per_hour: 0.5
-                align_state: center
-                align_header: center
-                name: CPU & RAM
-                icon: mdi:cpu-64-bit
-                show:
-                  extrema: false
-                  average: false
-                  labels: false    
-                style: |
-                  ha-card {
-                    border-radius: 15px;
-                    height: 230px;
-                    }    
-                        
-    ####################################################
-    #                                                  #
-    #                  OMV + PIHOLE                    #
-    #                                                  #
-    ####################################################                          
-
-    ### CARD 6    
               - type: vertical-stack
-                gridarea: card6
+                view_layout:
+                  grid-area: rpi
+                cards:
+                  - type: markdown
+                    content: |
+                      # Raspberry Pi4
+                    style:
+                      .: |
+                        ha-card {
+                          --ha-card-background: none !important;
+                          box-shadow: none !important;
+                          margin-top: 2px;
+                          height: 20px;
+                        }
+                      ha-markdown:
+                        $: |
+                          h1 {
+                            font-size: 20px;
+                            font-weight: bold;
+                            font-family: Helvetica;
+                            letter-spacing: '-0.01em';
+                          }
+                  - type: markdown
+                    content: >
+                      #  Stato alimentazione: {% if is_state('binary_sensor.raspberry_under_voltage', 'off') %} OK {% else %} NON OK {% endif %} 
+                    style:
+                      .: |
+                        ha-card {
+                          --ha-card-background: none !important;
+                          box-shadow: none !important;
+                          height: 70px;
+                        }
+                      ha-markdown:
+                        $: |
+                          h1 {
+                            font-size: 15px;
+                            font-weight: thin;
+                            font-family: Helvetica;
+                            letter-spacing: '-0.01em';
+                          }
+                  - type: horizontal-stack
+                    cards:
+                    - type: 'custom:mini-graph-card'
+                      color_type: card
+                      entities:
+                        - sensor.raspberry_temperature
+                      height: 70
+                      line_width: 2
+                      hours_to_show: 24
+                      name: T° Raspberry Pi4
+                      points_per_hour: 0.5
+                      align_state: center
+                      align_header: center
+                      show:
+                        extrema: true
+                        average: true
+                        labels: false 
+                      color_thresholds_transition: hard
+                      color_thresholds:
+                        - value: 0
+                          color: '#66ffff'
+                        - value: 40
+                          color: '#53ff1a'
+                        - value: 50
+                          color: '#ffff00'
+                        - value: 65
+                          color: '#ff8000'
+                        - value: 100
+                          color: '#ff0000'     
+                      card_mod:
+                        style: |
+                          ha-card {
+                            border-radius: 15px;
+                            height: 250px;
+                            } 
+
+                    - type: 'custom:mini-graph-card'
+                      color_type: card
+                      entities:
+                        - entity: sensor.raspberry_cpu_usage
+                          name: CPU
+                          color: red
+                        - entity: sensor.raspberry_memory_use
+                          name: RAM
+                          color: orange
+                          show_state: true
+                      height: 70
+                      line_width: 2
+                      hours_to_show: 24
+                      points_per_hour: 0.5
+                      align_state: center
+                      align_header: center
+                      name: CPU & RAM
+                      icon: mdi:cpu-64-bit
+                      show:
+                        extrema: false
+                        average: false
+                        labels: false    
+                      card_mod:
+                        style: |
+                          ha-card {
+                            border-radius: 15px;
+                            height: 250px;
+                            }  
+
+              - type: vertical-stack
+                view_layout:
+                  grid-area: omv
                 cards:
                   - type: markdown
                     content: |
@@ -4578,8 +4583,8 @@ views:
                         ha-card {
                           --ha-card-background: none !important;
                           box-shadow: none !important;
+                          margin-top: 2px;
                           height: 20px;
-                          margin-top: 5px;
                         }
                       ha-markdown:
                         $: |
@@ -4597,7 +4602,7 @@ views:
                         ha-card {
                           --ha-card-background: none !important;
                           box-shadow: none !important;
-                          height: 40px;
+                          height: 60px;
                         }
                       ha-markdown:
                         $: |
@@ -4607,34 +4612,170 @@ views:
                             font-family: Helvetica;
                             letter-spacing: '-0.01em';
                           }     
-                  - type: custom:bar-card
-                    entities:
-                      - entity: sensor.omv_nas
-                        icon: 'mdi:harddisk'
-                        name: NAS
-                      - entity: sensor.omv_backup
-                        icon: 'mdi:harddisk-plus'
-                        name: BACKUP
-                    direction: up
-                    positions:
-                      value: inside
-                      icon: false
-                    height: 220px
-                    width: 60%
-                    entity_row: true
-                    stack: horizontal  
-                    color: '#00a1ff'
-                    bar_style:
-                      border-radius: 5px  
-                    style: |
-                          ha-card {
-                            height: 260px;
-                            border-radius: 15px; 
-                            }  
-                            
-    ### CARD 7                            
+                  - type: horizontal-stack
+                    cards:
+                      - type: 'custom:flex-horseshoe-card'
+                        card_mod:
+                          style: |
+                            ha-card {
+                            background-color: var(--primary-background-color)
+                            height: 170px;
+                            width: 170px;  
+                            border-radius: 30px;      
+                            }   
+                        entities:
+                          - entity: sensor.omv_nas6tb
+                            decimals: 0
+                            name: 'NAS'
+                            unit: '%'
+                            tap_action: none   
+                          - entity: sensor.omv_nas6tb
+                            attribute: Mountpoint
+                            decimals: 0
+                            tap_action: none
+                        show:
+                          horseshoe_style: 'lineargradient'
+                        layout:
+                          hlines:
+                            # A horizontal line. Not connected to an entity
+                            - id: 0
+                              xpos: 50
+                              ypos: 50
+                              length: 50
+                              styles:
+                                - stroke: var(--primary-text-color);
+                                - stroke-width: 5;
+                                - stroke-linecap: round;
+                                - opacity: 0.7;
+                          states:
+                            # States 0 refers to the first entity in the list, ie index 0
+                            - id: 0
+                              entity_index: 0
+                              xpos: 50
+                              ypos: 42
+                              styles:
+                                - font-size: 3em;
+                            # States 1 refers to the second entity in the list, ie index 1
+                            - id: 1
+                              entity_index: 1
+                              xpos: 31
+                              ypos: 65
+                              styles:
+                                - text-anchor: start;
+                                - font-size: 1.5em;
+                          icons:
+                            # Icons 0 refers to the second entity in the list, ie index 1
+                            - id: 0
+                              entity_index: 1
+                              xpos: 28
+                              ypos: 63
+                              align: end
+                              size: 1.3
+                          names:
+                            # Names 0 refers to the first entity in the list, ie index 0
+                            - id: 0
+                              entity_index: 0
+                              xpos: 50
+                              ypos: 85
+                          
+                        # Scale set to 10 to 30 degrees celcius
+                        horseshoe_scale:
+                          min: 0
+                          max: 100
+                        # color stop list with 10 colors defined in the theme. With the `lineargradient` fill style, only the
+                        # first (16:) and last (25:) colors are used. The thresholds are ignored with this setting.
+                        color_stops:
+                          16: '#ffffff'
+                          17: '#e6f9ff'
+                          19: '#ccf2ff'
+                          21: '#b3ecff'
+                          22: '#99e6ff'
+                          23: '#80dfff'
+                          25: '#33ccff'
+
+                      - type: 'custom:flex-horseshoe-card'
+                        card_mod:
+                          style: |
+                            ha-card {
+                            --ha-card-background: none !important;
+                            height: 170px;
+                            width: 170px;  
+                            border-radius: 30px;      
+                            }   
+                        entities:
+                          - entity: sensor.omv_bkp
+                            decimals: 0
+                            name: 'Backup'
+                            unit: '%'
+                            tap_action: none   
+                          - entity: sensor.omv_bkp
+                            attribute: Mountpoint
+                            unit: ''
+                            tap_action: none
+                        show:
+                          horseshoe_style: 'lineargradient'
+                        layout:
+                          hlines:
+                            # A horizontal line. Not connected to an entity
+                            - id: 0
+                              xpos: 50
+                              ypos: 50
+                              length: 50
+                              styles:
+                                - stroke: var(--primary-text-color);
+                                - stroke-width: 5;
+                                - stroke-linecap: round;
+                                - opacity: 0.7;
+                          states:
+                            # States 0 refers to the first entity in the list, ie index 0
+                            - id: 0
+                              entity_index: 0
+                              xpos: 50
+                              ypos: 42
+                              styles:
+                                - font-size: 3em;
+                            # States 1 refers to the second entity in the list, ie index 1
+                            - id: 1
+                              entity_index: 1
+                              xpos: 31
+                              ypos: 65
+                              styles:
+                                - text-anchor: start;
+                                - font-size: 1.5em;
+                          icons:
+                            # Icons 0 refers to the second entity in the list, ie index 1
+                            - id: 0
+                              entity_index: 1
+                              xpos: 28
+                              ypos: 63
+                              align: end
+                              size: 1.3
+                          names:
+                            # Names 0 refers to the first entity in the list, ie index 0
+                            - id: 0
+                              entity_index: 0
+                              xpos: 50
+                              ypos: 85
+                          
+                        # Scale set to 10 to 30 degrees celcius
+                        horseshoe_scale:
+                          min: 0
+                          max: 100
+                        # color stop list with 10 colors defined in the theme. With the `lineargradient` fill style, only the
+                        # first (16:) and last (25:) colors are used. The thresholds are ignored with this setting.
+                        color_stops:
+                          16: '#ffffff'
+                          17: '#e6f9ff'
+                          19: '#ccf2ff'
+                          21: '#b3ecff'
+                          22: '#99e6ff'
+                          23: '#80dfff'
+                          25: '#33ccff'
+
+          
               - type: vertical-stack
-                gridarea: card7
+                view_layout:
+                  grid-area: pihole
                 cards:
                   - type: markdown
                     content: |
@@ -4644,8 +4785,8 @@ views:
                         ha-card {
                           --ha-card-background: none !important;
                           box-shadow: none !important;
+                          margin-top: 2px;
                           height: 20px;
-                          margin-top: 5px;
                         }
                       ha-markdown:
                         $: |
@@ -4657,13 +4798,13 @@ views:
                           }         
                   - type: markdown
                     content: >
-                      #  Totale Queries bloccate: {{states('sensor.pi_hole_ads_blocked_today') }}
+                      #  Totale Queries bloccate oggi: {{states('sensor.pi_hole_ads_blocked_today') }}
                     style:
                       .: |
                         ha-card {
                           --ha-card-background: none !important;
                           box-shadow: none !important;
-                          height: 40px;
+                          height: 60px;
                         }
                       ha-markdown:
                         $: |
@@ -4690,14 +4831,19 @@ views:
                     align_header: center
                     show:
                       graph: bar
-                      average: true
-                      extrema: true
-                    color_thresholds_transition: hard    
-                    style: |
-                      ha-card {
-                        height: 230px;
-                        border-radius: 15px;
-                        }  
+                      icon: false
+                      name: false
+                      average: false
+                      extrema: false
+                    color_thresholds_transition: hard   
+                    tap_action: none 
+                    card_mod:
+                      style: |
+                        ha-card {
+                          height: 165px;
+                          --ha-card-background: none !important;
+                          border-radius: 15px;
+                          }  
     
 
 ############################################################################################
@@ -4765,7 +4911,7 @@ views:
               width: 8%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/home
+              navigation_path: /ndr-floorplan/home
             type: image 
           - action: none
             image: /local/ndr_floorplan/sidebar/system_on.png
@@ -4777,7 +4923,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/system
+              navigation_path: /ndr-floorplan/system
             type: image
           - action: none
             image: /local/ndr_floorplan/sidebar/domotica_off.png
@@ -4787,7 +4933,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/domotica
+              navigation_path: /ndr-floorplan/domotica
             type: image 
 
 
@@ -5013,25 +5159,13 @@ views:
           }
         elements:
 
-          - type: 'custom:layout-card-griddier'
-            layout: grid
-            gridcols: 50% 50%
-            gridrows: auto auto auto
-            gridareas: |
-              'card2 card4'  
-            gridcols_medium: 50% 50%
-            gridareas_medium: |
-              'card0 card1'
-              'card2 card3' 
-              'card4 card5' 
-            gridcols_small: 100%
-            gridareas_small: |
-              'card0'
-              'card1' 
-              'card2'
-              'card3'
-              'card4'
-            column_width: 500px
+          - type: 'custom:layout-card'
+            layout_type: grid
+            layout_options:
+              grid-template-columns: 50% 50%
+              grid-template-rows: 100%
+              grid-template-areas: |
+                "shelly batterie"
             style: 
               height: 87%
               left: 62%
@@ -5039,286 +5173,191 @@ views:
               width: 68%
             cards:
 
-    ### CARD 1
-              - type: horizontal-stack
-                gridarea: card1
-                cards: 
-                  - type: 'custom:button-card' 
-                    icon: 'mdi:devices' # Change this to the icon you want to display
-                    show_icon: true
-                    show_name: false
-                    styles:
-                      card:
-                        - width: 60px
-                        - height: 60px
-                        - margin: 10px
-                        - border-radius: 15px
-                        - box-shadow: |
-                            [[[ return states['sun.sun'].state == 'below_horizon'
-                                  ? 'inset -3px -3px 5px rgba(50, 50, 50, .5), inset 3px 3px 5px rgba(0, 0, 0, .3)'
-                                  : 'inset -3px -3px 5px rgba(255, 255, 255, .65), inset 3px 3px 5px rgba(0, 0, 0, .035)';
-                                ]]]
-                        - background-color: var(--primary-background-color)
-                      icon:
-                        - color: var(--paper-item-icon-active-color)
-                    state:
-                      - value: 'on'
-                        styles:
-                          card:
-                            - box-shadow: |
-                                [[[ return states['sun.sun'].state == 'below_horizon'
-                                  ? 'inset -3px -3px 5px rgba(50, 50, 50, .5), inset 3px 3px 5px rgba(0, 0, 0, .3)'
-                                  : 'inset -3px -3px 5px rgba(255, 255, 255, .65), inset 3px 3px 5px rgba(0, 0, 0, .035)';
-                                ]]]
-                          icon:
-                            - color: var(--paper-item-icon-active-color)
-                    tap_action:
-                      action: navigate
-                      navigation_path: /ndr-ui/devices
-                      haptic: light      
-
     ####################################################
     #                                                  #
     #                      SHELLY                      #
     #                                                  #
     ####################################################
 
-    ### CARD 2
-              - type: vertical-stack
-                gridarea: card2
-                cards:
-                  - type: markdown
-                    content: |
-                      # Shelly
-                    style:
-                      .: |
-                        ha-card {
-                          --ha-card-background: none !important;
-                          box-shadow: none !important;
-                          height: 20px;
-                          margin-top: 5px;
-                        }
-                      ha-markdown:
-                        $: |
-                          h1 {
-                            font-size: 20px;
-                            font-weight: bold;
-                            font-family: Helvetica;
-                            letter-spacing: '-0.01em';
-                          }         
-                  - type: markdown
-                    content: >
-                      #  Uptime: {{states('sensor.shelly_uptime') }}
+                - type: vertical-stack
+                  view_layout:
+                    grid-area: shelly
+                  cards:
+                    - type: markdown
+                      content: |
+                        # Shelly
+                      style:
+                        .: |
+                          ha-card {
+                            --ha-card-background: none !important;
+                            box-shadow: none !important;
+                            height: 20px;
+                            margin-top: 5px;
+                          }
+                        ha-markdown:
+                          $: |
+                            h1 {
+                              font-size: 20px;
+                              font-weight: bold;
+                              font-family: Helvetica;
+                              letter-spacing: '-0.01em';
+                            }         
+                    - type: markdown
+                      content: >
+                        #  Uptime: {{states('sensor.shelly_uptime') }}
 
-                      #  Stato Firmware: {{states('sensor.shelly_fw_disponibile') }}
-                    style:
-                      .: |
-                        ha-card {
-                          --ha-card-background: none !important;
-                          box-shadow: none !important;
-                          height: 80px;
-                        }
-                      ha-markdown:
-                        $: |
-                          h1 {
-                            font-size: 15px;
-                            font-weight: thin;
-                            font-family: Helvetica;
-                            letter-spacing: '-0.01em';
-                          }            
-                  - type: horizontal-stack
-                    cards:
-                      - type: entities
-                        entities:  
-                          - entity: group.stato_shelly
-                            name: Stato Sistema Shelly
-                          - type: section
-                          - entity: sensor.shelly_scale_stato
-                            type: custom:multiple-entity-row
-                            name: Scale
-                            icon: mdi:stairs
-                            show_state: false
-                            entities:
-                              - entity: sensor.shelly_scale_stato
-                                name: Stato
-                              - entity: sensor.shelly_scale_segnale
-                                name: Segnale
-                          - entity: sensor.shelly_faretti_stato
-                            type: custom:multiple-entity-row
-                            name: Faretti
-                            icon: mdi:string-lights
-                            show_state: false
-                            entities:
-                              - entity: sensor.shelly_faretti_stato
-                                name: Stato
-                              - entity: sensor.shelly_faretti_segnale
-                                name: Segnale
-                          - entity: sensor.shelly_led_cucina_stato
-                            type: custom:multiple-entity-row
-                            name: Led Cucina
-                            icon: mdi:led-strip-variant
-                            show_state: false
-                            entities:
-                              - entity: sensor.shelly_led_cucina_stato
-                                name: Stato
-                              - entity: sensor.shelly_led_cucina_segnale
-                                name: Segnale
-                          - entity: sensor.shelly_bagno_stato
-                            type: custom:multiple-entity-row
-                            name: Bagno
-                            icon: mdi:ceiling-light
-                            show_state: false
-                            entities:
-                              - entity: sensor.shelly_bagno_stato
-                                name: Stato
-                              - entity: sensor.shelly_bagno_segnale
-                                name: Segnale
-                          - entity: sensor.shelly_camera_stato
-                            type: custom:multiple-entity-row
-                            name: Camera
-                            icon: mdi:string-lights
-                            show_state: false
-                            entities:
-                              - entity: sensor.shelly_camera_stato
-                                name: Stato
-                              - entity: sensor.shelly_camera_segnale
-                                name: Segnale
-                          - entity: sensor.shelly_studio_stato
-                            type: custom:multiple-entity-row
-                            name: Studio
-                            icon: mdi:spotlight-beam
-                            show_state: false
-                            entities:
-                              - entity: sensor.shelly_studio_stato
-                                name: Stato
-                              - entity: sensor.shelly_studio_segnale
-                                name: Segnale
-                          - entity: sensor.shelly_giardino_stato
-                            type: custom:multiple-entity-row
-                            name: Giardino
-                            icon: mdi:coach-lamp
-                            show_state: false
-                            entities:
-                              - entity: sensor.shelly_giardino_stato
-                                name: Stato
-                              - entity: sensor.shelly_giardino_segnale
-                                name: Segnale
-                          - type: section
-                          - entity: script.update_shelly
-                            type: custom:multiple-entity-row
-                            name: Aggiorna FW
-                            toggle: true
-                            state_color: true
-                     
-    ####################################################
-    #                                                  #
-    #                      ZIGBEE                      #
-    #                                                  #
-    ####################################################
+                        #  Stato Firmware: {{states('sensor.shelly_fw_disponibile') }}
+                      style:
+                        .: |
+                          ha-card {
+                            --ha-card-background: none !important;
+                            box-shadow: none !important;
+                            height: 80px;
+                          }
+                        ha-markdown:
+                          $: |
+                            h1 {
+                              font-size: 15px;
+                              font-weight: thin;
+                              font-family: Helvetica;
+                              letter-spacing: '-0.01em';
+                            }            
+                    - type: horizontal-stack
+                      cards:
+                        - type: entities
+                          entities:  
+                            - entity: group.stato_shelly
+                              name: Stato Sistema Shelly
+                            - type: section
+                            - entity: sensor.shelly_scale_stato
+                              type: custom:multiple-entity-row
+                              name: Scale
+                              icon: mdi:stairs
+                              show_state: false
+                              entities:
+                                - entity: sensor.shelly_scale_stato
+                                  name: Stato
+                                - entity: sensor.shelly_scale_segnale
+                                  name: Segnale
+                            - entity: sensor.shelly_faretti_stato
+                              type: custom:multiple-entity-row
+                              name: Faretti
+                              icon: mdi:string-lights
+                              show_state: false
+                              entities:
+                                - entity: sensor.shelly_faretti_stato
+                                  name: Stato
+                                - entity: sensor.shelly_faretti_segnale
+                                  name: Segnale
+                            - entity: sensor.shelly_led_cucina_stato
+                              type: custom:multiple-entity-row
+                              name: Led Cucina
+                              icon: mdi:led-strip-variant
+                              show_state: false
+                              entities:
+                                - entity: sensor.shelly_led_cucina_stato
+                                  name: Stato
+                                - entity: sensor.shelly_led_cucina_segnale
+                                  name: Segnale
+                            - entity: sensor.shelly_bagno_stato
+                              type: custom:multiple-entity-row
+                              name: Bagno
+                              icon: mdi:ceiling-light
+                              show_state: false
+                              entities:
+                                - entity: sensor.shelly_bagno_stato
+                                  name: Stato
+                                - entity: sensor.shelly_bagno_segnale
+                                  name: Segnale
+                            - entity: sensor.shelly_camera_stato
+                              type: custom:multiple-entity-row
+                              name: Camera
+                              icon: mdi:string-lights
+                              show_state: false
+                              entities:
+                                - entity: sensor.shelly_camera_stato
+                                  name: Stato
+                                - entity: sensor.shelly_camera_segnale
+                                  name: Segnale
+                            - entity: sensor.shelly_studio_stato
+                              type: custom:multiple-entity-row
+                              name: Studio
+                              icon: mdi:spotlight-beam
+                              show_state: false
+                              entities:
+                                - entity: sensor.shelly_studio_stato
+                                  name: Stato
+                                - entity: sensor.shelly_studio_segnale
+                                  name: Segnale
+                            - entity: sensor.shelly_giardino_stato
+                              type: custom:multiple-entity-row
+                              name: Giardino
+                              icon: mdi:coach-lamp
+                              show_state: false
+                              entities:
+                                - entity: sensor.shelly_giardino_stato
+                                  name: Stato
+                                - entity: sensor.shelly_giardino_segnale
+                                  name: Segnale
+                            - type: section
+                            - entity: script.update_shelly
+                              type: custom:multiple-entity-row
+                              name: Aggiorna FW
+                              toggle: true
+                              state_color: true
+                      
+      ####################################################
+      #                                                  #
+      #                      Batterie                    #
+      #                                                  #
+      ####################################################
 
-    ### CARD 4
-              - type: vertical-stack
-                gridarea: card4
-                cards:
-                  - type: markdown
-                    content: |
-                      # ZigBee
-                    style:
-                      .: |
-                        ha-card {
-                          --ha-card-background: none !important;
-                          box-shadow: none !important;
-                          height: 20px;
-                          margin-top: 5px;
-                        }
-                      ha-markdown:
-                        $: |
-                          h1 {
-                            font-size: 20px;
-                            font-weight: bold;
-                            font-family: Helvetica;
-                            letter-spacing: '-0.01em';
-                          }         
-                  - type: markdown
-                    content: >
-                      #  Stato Zigbee2mqtt Bridge: {{states('sensor.zigbee2mqtt_bridge_state') }}
-
-                      #  Versione: {{states('sensor.zigbee2mqtt_version') }}
-                    style:
-                      .: |
-                        ha-card {
-                          --ha-card-background: none !important;
-                          box-shadow: none !important;
-                          height: 80px;
-                        }
-                      ha-markdown:
-                        $: |
-                          h1 {
-                            font-size: 15px;
-                            font-weight: thin;
-                            font-family: Helvetica;
-                            letter-spacing: '-0.01em';
-                          }            
-                  - type: horizontal-stack
-                    cards:
-                      - type: entities    
-                        entities:
-                          - entity: sensor.zigbee2mqtt_version
-                            type: custom:multiple-entity-row
-                            name: Versioni SW
-                            show_state: false
-                            entities:
-                              - icon: mdi:zigbee
-#                                name: Zigbee2mqtt
-#                                entity: sensor.zigbee2mqtt_version
-                                state_color: true
-                                tap_action:
-                                  action: more-info
-                                  entity: sensor.zigbee2mqtt_version
-                              - icon: mdi:information-outline
-#                                name: Coordinator
-#                                entity: sensor.coordinator_version
-                                state_color: true
-                                tap_action:
-                                  action: more-info
-                                  entity: sensor.coordinator_version
-                          - entity: input_select.zigbee2mqtt_log_level
-                          - type: section
-                          - entity: switch.zigbee2mqtt_main_join
-                            name: Aggiungi Dispositivo
-                          - entity: timer.zigbee_permit_join
-                            name: Timer
-                          - type: section
-                          - entity: input_text.zigbee2mqtt_old_name
-                            name: Nome
-                          - entity: input_text.zigbee2mqtt_new_name
-                            name: Nuovo
-                          - entity: script.zigbee2mqtt_rename
-                            type: custom:multiple-entity-row
-                            name: Rinomina
-                            show_state: false
-                            entities:
-                              - icon: mdi:radiobox-marked
-                                state_color: true
-                                tap_action:
-                                  action: toggle
-                                  entity: script.zigbee2mqtt_rename
-                          - type: section
-                          - entity: input_text.zigbee2mqtt_remove
-                            name: Nome
-                          - entity: script.zigbee2mqtt_remove
-                            type: custom:multiple-entity-row
-                            name: Rimuovi
-                            show_state: false
-                            entities:
-                              - icon: mdi:radiobox-marked
-                                state_color: true
-                                tap_action:
-                                  action: toggle
-                                  entity: script.zigbee2mqtt_remove
-                        show_header_toggle: false
-
-
+                - type: vertical-stack
+                  view_layout:
+                      grid-area: batterie
+                  cards:
+                    - type: markdown
+                      content: |
+                        # Batterie IoT
+                      style:
+                        .: |
+                          ha-card {
+                            --ha-card-background: none !important;
+                            box-shadow: none !important;
+                            height: 20px;
+                            margin-top: 5px;
+                          }
+                        ha-markdown:
+                          $: |
+                            h1 {
+                              font-size: 20px;
+                              font-weight: bold;
+                              font-family: Helvetica;
+                              letter-spacing: '-0.01em';
+                            }         
+                    - type: custom:gap-card
+                      height: 80
+                      size: 30
+                    - type: entities
+                      entities:  
+                        - type: custom:battery-entity-row
+                          entity: sensor.scurone_sala_battery
+                          name: Sensore Scurone - Aqara
+                        - type: custom:battery-entity-row
+                          entity: sensor.lucernaio_studio_battery
+                          name: Sensore Lucernaio Studio - Aqara
+                        - type: custom:battery-entity-row
+                          entity: sensor.cabina_armadio_battery
+                          name: Sensore Cabina Armadio - Aqara
+                        - type: custom:battery-entity-row
+                          entity: sensor.pulsante_sala_battery
+                          name: Pulsante Sala - Aqara
+                        - type: custom:battery-entity-row
+                          entity: sensor.pir_1_battery
+                          name: PIR 1 - Sonoff
+                        - type: custom:battery-entity-row
+                          entity: sensor.pir_2_battery
+                          name: PIR 2 - Sonoff
 
 ############################################################################################
 ############################################################################################
@@ -5385,7 +5424,7 @@ views:
               width: 8%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/home
+              navigation_path: /ndr-floorplan/home
             type: image 
           - action: none
             image: /local/ndr_floorplan/sidebar/system_off.png
@@ -5395,7 +5434,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/system
+              navigation_path: /ndr-floorplan/system
             type: image
           - action: none
             image: /local/ndr_floorplan/sidebar/domotica_on.png
@@ -5407,7 +5446,7 @@ views:
               width: 20.5078125%
             tap_action:
               action: navigate
-              navigation_path: /ndr-tabletui/domotica
+              navigation_path: /ndr-floorplan/domotica
             type: image 
 
 
