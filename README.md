@@ -278,7 +278,7 @@ In questa Repo, le custom Cards utilizzate sono le seguenti:
 
 Vi invito a leggere la documentazione di quelle che intendete ad utilizzare.
 
-## File Dashboard
+## File Dashboard.yaml
 
 Bene, ora finalmente andremo a creare il file yaml della nostra Dashboard. 
 Il file dovrà avere lo stesso nome inserito in *"filename:"* nel nostro [configuration.yaml](#configuration.yaml).  
@@ -368,7 +368,7 @@ Fate attenzione alle seguenti istruzioni:
 - **filter**: utile per aggiungere un filtro alla vostra luce, che cambierà colore in base a quello utilizzato (utile per lampadine/strisce led RGB);
 - **opacity**: utile per sfumare la quantità di luce in base alla percentuale di luminosità impostata (utile per qualsiasi lampadina/striscia led dimmerabile);
 
-#### BONUS 1: Planimetria "di giorno"
+###### BONUS 1: Planimetria "di giorno"
 
 Volendo, si può aggiungere un elemento corrispondente alla vostra planimetria scattata "di giorno".
 
@@ -393,12 +393,12 @@ Volendo, si può aggiungere un elemento corrispondente alla vostra planimetria s
 ```
 L'opzione **state_image** renderà trasparente l'immagine durante le ore notture (e quindi mostrando la principale), mentre la mostrerà durante le ore di luce (notare l'entità *sun.sun* ed i suoi stati *above_horizon* e *below_horizon*).
 
-#### BONUS 2: Gif animata per la Pioggia
+###### BONUS 2: Gif animate per il Meteo
 
 Nella sezione [Elaborazione Immagini](#elaborazione-immagini-photoshop-gimp-ecc) avevo menzionato un BONUS riguardante due immagini (giorno + notte) con eventuali balconi/terrazzie/giardini esclusi.
 Bene, lo scopo di queste due ulteriori immagini è quello di inserire nel nostro Floorplan, una o più gif raffiguranti il meteo che agiscano ovviamente solo all'esterno dell'abitazione.
 
-Per raggiungere questo scopo, utilizzeremo questo codice:
+Per raggiungere lo scopo, utilizzeremo questo codice:
 
 ```yaml
 - type: image
@@ -431,5 +431,60 @@ Per raggiungere questo scopo, utilizzeremo questo codice:
     action: none
 ```
 
-> Il metodo sopra descritto è stato utilizzato con l'intento di utilizzare più di una gif. Se si volesse utilizzare solo una per, esempio, la pioggia, si potrebbe utilizzare *state_filter*. In questo modo si eviterebbe di menzionare tutti gli stati possibili dell'entità meteo. Più info sulla [doc ufficiale](https://www.home-assistant.io/lovelace/picture-elements/).
+> Il metodo sopra descritto è stato utilizzato con l'intento di utilizzare più di una gif. Se si volesse utilizzarne solo una, si potrebbe utilizzare *state_filter*. In questo modo si eviterebbe di menzionare tutti gli stati possibili dell'entità meteo. Più info sulla [doc ufficiale](https://www.home-assistant.io/lovelace/picture-elements/).
 
+#### Icone
+
+Arrivati a questo punto, avrete finalmente il vostro Floorplan con tutte le immagini ed eventuali gif inserite. Cosa manca? Le icone "cliccabili" per poter controllare le luci di casa vostra.
+
+Anche queste saranno degli elementi della Picture Elements:
+
+```yaml
+- type: state-icon
+  entity: light.faretti
+  icon: 'mdi:string-lights'
+  style:
+    '--iron-icon-height': 1.2vw
+    '--iron-icon-width': 1.2vw
+    '--paper-item-icon-active-color': '#ffff66'
+    '--paper-item-icon-color': darkgrey
+    align-items: center
+    background-color: '#FFFFFF'
+    border-radius: 100%
+    box-shadow: '0px 0px 28px 0px rgba(0,0,0,0.39)'
+    display: flex
+    justify-content: center
+    left: 61%
+    margin-left: '-1.5vw'
+    margin-top: '-1.5vw'
+    top: 71%
+    transform: scale(1.2)
+    width: 2.5vw
+    height: 2.5vw
+  tap_action:
+    action: toggle
+```
+Fatto questo, il vostro Floorplan sarà funzionante.
+
+#### Sidebar
+
+Se durante la creazione delle vostre immagini avete previsto uno spazio per la Sidebar, è arrivato il momento di inserirla.
+
+Anche questa, ovviamente, altro non è che un *Elemento* della Picture Elements. Quindi, il suo inserimento sarà del tutto simile agli elementi precedenti:
+
+```yaml
+- action: none
+  hold_action:
+    action: none
+  image: /local/ndr_floorplan/sidebar/sidebar_xl.png
+  style:
+    height: 100%
+    left: 11.73828125%
+    top: 50%
+    width: 23.4765625%
+  tap_action:
+    action: none
+  type: image
+```
+>Nota 1: il consiglio è di perfezionare la vostra sidebar nella prima vista, in modo da copiarla/incollarla tale e quale anche nelle viste successive (con eventuali piccole correzioni);  
+>Nota 2: tutte le card che trovate nella sidebar in questa repo, sono a loro volta degli *elementi* della Picture Elements.
