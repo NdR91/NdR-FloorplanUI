@@ -22,6 +22,18 @@ Questa volta scriverò tutto in Italiano, per il semplice fatto che di Guide/Rep
 
 Ultima, doverosa premessa: non so per quanto tempo manterrò aggiornata questa Repo. Qualsiasi consiglio, correztione o suggerimento saranno sempre ben accetti: aprite una Issue in modo da tenere tutto sempre ben tracciato.
 
+# Indice
+
+- [Floorplan e Picture Elements](#floorplan-e-picture-elements)
+  - [Approccio](#approccio)
+  - [Creazione delle Immagini](#creazione-delle-immagini)
+    -[SweetHome3D](#sweethome3d)
+    - [Elaborazione Immagini](#elaborazione-immagini-photoshop-gimp-ecc)
+- [Costruzione della Dashboard](#costruzione-della-dashboard)
+  - [Configuration.yaml](#configuration.yaml)
+  - [Tema](#tema)
+  - [File Dashboard e Picture Elements](#file-dashboard-e-picture-elements)
+
 # Floorplan e Picture Elements
 
 ## Approccio
@@ -216,12 +228,12 @@ lovelace:
   # Dashoards
   dashboards:
     #Floorplan UI
-    ndr-floorplan: <-- Nome a piacimento
+    ndr-floorplan: #<-- Nome a piacimento
       mode: yaml
-      title: NdR Floorplan UI <-- Titolo a piacimento
-      icon: mdi:tablet <-- Icona a piacimento
+      title: NdR Floorplan UI #<-- Titolo a piacimento
+      icon: mdi:tablet #<-- Icona a piacimento
       show_in_sidebar: true
-      filename: ndr_floorplan.yaml <-- Nome a piacimento
+      filename: ndr_floorplan.yaml #<-- Nome a piacimento
     # ----------------------------------------------------
 ```
 > *Nota: molto importante la parte **mode: storage**. Questo significa che potrete utilizzare sia Dashboard create da Frontend che in modalità yaml*
@@ -230,3 +242,46 @@ lovelace:
 
 La scelta del tema, in questo caso, non è particolarmente vincolante. 
 Potete crearne uno vostro, copiare quello presente in questa o in altre mie repo (es. [NdR-TabletUI](https://github.com/NdR91/NdR-TabletUI)), o semplicemente scaricare uno dei tanti presenti su HACS. Starà a voi cercare l'abbinamento corretto con i colori che userete.
+
+## Custom Cards
+In questa Repo, le custom Cards utilizzate sono le seguenti:
+
+- [X] [Config Template Card](https://github.com/iantrich/config-template-card)
+- [x] [Layout Card](https://github.com/thomasloven/lovelace-layout-card)
+- [x] [Card Mod](https://github.com/thomasloven/lovelace-card-mod)
+- [x] [Button Card](https://github.com/custom-cards/button-card)
+- [x] [Browser Mod](https://github.com/thomasloven/hass-browser_mod)
+- [ ] [Mini Graph Card](https://github.com/kalkih/mini-graph-card)
+- [ ] [Flexible Horseshoe Card](https://github.com/AmoebeLabs/flex-horseshoe-card)
+- [ ] [Mini Climate Card](https://github.com/artem-sedykh/mini-climate-card)
+- [ ] [Gap Card](https://github.com/thomasloven/lovelace-gap-card)
+- [ ] [Simple Weather Card](https://github.com/kalkih/simple-weather-card)
+
+> [X] = Importante  
+> [ ] = Non Importante
+
+Vi invito a leggere la documentazione di quelle che intendete ad utilizzare.
+
+## File Dashboard e Picture Elements
+
+Bene, ora finalmente andremo a creare il file yaml della nostra Dashboard. 
+Il file dovrà avere lo stesso nome inserito in *"filename:"* nel nostro [configuration.yaml](#configuration.yaml).  
+Per prima cosa, bisogna inserire le prima due righe:
+```yaml
+title: TabletUI #<-- Titolo a piacimento
+views:
+```
+> Ovviamente il titolo è a vostra scelta.  
+
+Dopo *"views"* andremo ad inserire tutte le nostre *VISTE*, che saranno tendenzialmente una per ogni *"Bottone"* che vorremo inserire nella nostra Dashboard.
+
+La vista contenente il nostro Floorplan, sarà impostata in modo simile al seguente:
+
+```yaml
+  - title: Home #<-- Nome a piacimento
+    icon: 'mdi:floor-plan' #<-- Icona a piacimento
+    panel: true
+    path: home #<-- Il Path sarà utile per generare link navigabili all'interno dell'interfaccia
+    badges: []    
+    cards:
+```
