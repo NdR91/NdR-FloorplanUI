@@ -30,7 +30,7 @@ Ultima, doverosa premessa: non so per quanto tempo manterrò aggiornata questa R
     - [SweetHome3D](#sweethome3d)
     - [Elaborazione Immagini](#elaborazione-immagini-photoshop-gimp-ecc)
 - [Costruzione della Dashboard](#costruzione-della-dashboard)
-  - [Configuration.yaml](#configuration.yaml)
+  - [Configuration.yaml](#configurationyaml)
   - [Tema](#tema)
   - [File Dashboard e Picture Elements](#file-dashboard-e-picture-elements)
 
@@ -257,8 +257,10 @@ In questa Repo, le custom Cards utilizzate sono le seguenti:
 - [ ] [Gap Card](https://github.com/thomasloven/lovelace-gap-card)
 - [ ] [Simple Weather Card](https://github.com/kalkih/simple-weather-card)
 
-> [X] = Importante  
-> [ ] = Non Importante
+<details><summary> Legenda</summary>
+ [X] = Importante    
+ [ ] = Non Importante
+</details>
 
 Vi invito a leggere la documentazione di quelle che intendete ad utilizzare.
 
