@@ -26,8 +26,8 @@ Ultima, doverosa premessa: non so per quanto tempo manterrò aggiornata questa R
 
 - [Floorplan e Picture Elements](#floorplan-e-picture-elements)
   - [Approccio](#approccio)
-  - [Creazione delle Immagini](#creazione-delle-immagini)
-    -[SweetHome3D](#sweethome3d)
+  - [Creazione delle Immagini](#creazione-delle-immagini)  
+    - [SweetHome3D](#sweethome3d)
     - [Elaborazione Immagini](#elaborazione-immagini-photoshop-gimp-ecc)
 - [Costruzione della Dashboard](#costruzione-della-dashboard)
   - [Configuration.yaml](#configuration.yaml)
