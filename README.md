@@ -258,8 +258,10 @@ In questa Repo, le custom Cards utilizzate sono le seguenti:
 - [ ] [Simple Weather Card](https://github.com/kalkih/simple-weather-card)
 
 <details><summary> Legenda</summary>
- [X] = Importante    
- [ ] = Non Importante
+
+- [X] [Importante]    
+- [ ] = Non Importante
+
 </details>
 
 Vi invito a leggere la documentazione di quelle che intendete ad utilizzare.
