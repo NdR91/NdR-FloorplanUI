@@ -30,9 +30,12 @@ Ultima, doverosa premessa: non so per quanto tempo manterrò aggiornata questa R
     - [SweetHome3D](#sweethome3d)
     - [Elaborazione Immagini](#elaborazione-immagini-photoshop-gimp-ecc)
 - [Costruzione della Dashboard](#costruzione-della-dashboard)
+  - [Posizione dei file immagine](#posizione-dei-file-immagine)
   - [Configuration.yaml](#configurationyaml)
   - [Tema](#tema)
-  - [File Dashboard e Picture Elements](#file-dashboard-e-picture-elements)
+  - [Custom Cards](#custom-cards)
+  - [File dashboard.yaml](#file-dashboardyaml)
+    - [Picture Elements](#picture-elements)
 
 # Floorplan e Picture Elements
 
@@ -217,6 +220,15 @@ Ora potrete esportare ogni layer come descritto nel paragrafo precedente.
 Finalmente tutti gli elementi necessari per la creazione della nostra Dashboard sono pronti, quindi non ci resta che "assemblare" il tutto in un unico file.
 > *Nota: In realtà, tutto quello che troverete qui di seguito è assolutamente replicabile anche nella modalità di modifica della Dashboard integrata sul Frontend di Home Assistant. Tuttavia, il mio cionsiglio è di farlo "manualmente", ovvero in modalità yaml, in modo da poter utilizzare strumenti come Visual Studio Code. In questo modo risulta molto più semplice la gestione di un file che supererà abbondantemente le 5000 righe*
 
+## Posizione dei file immagine
+
+Le immagini create devono ovviamente essere presenti all'interno della vostra cartella */config* di Home Assistant.
+Per semplicità, vi consiglio di creare una nuova cartella all'interno di */www*, in modo da raggruppare tutti i file necessari in un unico luogo.
+
+>Perchè all'interno di */www*? Semplicemente, i file all'interno di questa cartella sono accessibili anche dal file che andrete a creare. In caso contrario, vi invito a consultare la documentazione ufficiale, che descrive come utilizzare [allowlist_external_dirs](https://www.home-assistant.io/docs/configuration/basic/).
+
+Negli esempi che troverete in questa repo, i file relativi alla Dashboard sono **sempre** all'interno di */config/www/ndr_floorplan/*.
+
 ## Configuration.yaml
 Per prima cosa, dovremo predisporre il nostro *configuration.yaml* per poter utilizzare **anche** le Dashboard in modalità yaml.
 
@@ -259,14 +271,14 @@ In questa Repo, le custom Cards utilizzate sono le seguenti:
 
 <details><summary> Legenda</summary>
 
-- [X] [Importante]    
+- [X] = Importante 
 - [ ] = Non Importante
 
 </details>
 
 Vi invito a leggere la documentazione di quelle che intendete ad utilizzare.
 
-## File Dashboard e Picture Elements
+## File Dashboard
 
 Bene, ora finalmente andremo a creare il file yaml della nostra Dashboard. 
 Il file dovrà avere lo stesso nome inserito in *"filename:"* nel nostro [configuration.yaml](#configuration.yaml).  
@@ -282,10 +294,142 @@ Dopo *"views"* andremo ad inserire tutte le nostre *VISTE*, che saranno tendenzi
 La vista contenente il nostro Floorplan, sarà impostata in modo simile al seguente:
 
 ```yaml
-  - title: Home #<-- Nome a piacimento
-    icon: 'mdi:floor-plan' #<-- Icona a piacimento
-    panel: true
-    path: home #<-- Il Path sarà utile per generare link navigabili all'interno dell'interfaccia
-    badges: []    
-    cards:
+- title: Home #<-- Nome a piacimento
+  icon: 'mdi:floor-plan' #<-- Icona a piacimento
+  panel: true
+  path: home #<-- Il Path sarà utile per generare link navigabili all'interno dell'interfaccia
+  badges: []    
+  cards:
 ```
+
+### Picture Elements
+
+Questa è la card più importante in assoluto, ovvero quella che vi permetterà di visualizzare la vostra planimetria e di renderla interattiva.
+
+I principi fonamentali di questa card sono stati discussi nella sezione [Approccio](#approccio).
+
+Per mettere in pratica quanto descritto, andremo ad utilizzare le immagini create nei paragrafi precedenti:
+
+```yaml
+type: picture-elements       
+image: /local/ndr_floorplan/floorplan/casa-notte.png #<-- percorso della vostra immagine della Planimetria di notte
+style: |
+  ha-card:first-child {
+    background: rgba(42, 46, 48, 1)
+  }
+elements:
+```
+
+Questo primo "blocco" non fa altro che inserire l'immagine di sfondo, quella della Planimetria *"di notte"* e con tutte le luci spente.
+
+Adesso, ovviamente, andremo ad aggiungere gli *Elementi*, ovvero tutte le nostre luci.
+
+```yaml
+- type: image
+  action: none
+  entity: light.faretti
+  hold_action:
+    action: none
+  image: /local/ndr_floorplan/floorplan/sala_faretti.png
+  style:
+    filter: >-
+      ${ "hue-rotate(" + (states['light.faretti'].attributes.hs_color
+      ? states['light.faretti'].attributes.hs_color[0] : 0) + "deg)"}
+    left: 50%
+    mix-blend-mode: lighten
+    opacity: "${states['light.faretti'].state === 'on' ? (states['light.faretti'].attributes.brightness / 255) : '0'}"
+    top: 50%
+    width: 100%
+  tap_action:
+    action: none
+
+- type: image
+  action: none
+  entity: light.led_cucina
+  hold_action:
+    action: none
+  image: /local/ndr_floorplan/floorplan/sala_led-cucina.png
+  style:
+    filter: >-
+      ${ "hue-rotate(" + (states['light.led_cucina'].attributes.hs_color
+      ? states['light.led_cucina'].attributes.hs_color[0] : 0) + "deg)"}
+    left: 50%
+    mix-blend-mode: lighten
+    opacity: "${states['light.led_cucina'].state === 'on' ? (states['light.led_cucina'].attributes.brightness / 255) : '0'}"
+    top: 50%
+    width: 100%
+  tap_action:
+    action: none
+  
+  ...continua con altre luci
+```
+**Importante**:  
+Fate attenzione alle seguenti istruzioni:
+- **filter**: utile per aggiungere un filtro alla vostra luce, che cambierà colore in base a quello utilizzato (utile per lampadine/strisce led RGB);
+- **opacity**: utile per sfumare la quantità di luce in base alla percentuale di luminosità impostata (utile per qualsiasi lampadina/striscia led dimmerabile);
+
+#### BONUS 1: Planimetria "di giorno"
+
+Volendo, si può aggiungere un elemento corrispondente alla vostra planimetria scattata "di giorno".
+
+```yaml
+- type: image
+  action: none
+  entity: sun.sun
+  hold_action:
+    action: none
+  state_image:
+    above_horizon: /local/ndr_floorplan/floorplan/casa-giorno.png
+    below_horizon: /local/ndr_floorplan/transparent.png
+  style:
+    height: 100%
+    left: 50%
+    mix-blend-mode: lighten
+    opacity: '${ states[''sensor.sunlight_opacity''].state }'
+    top: 50%
+    width: 100%
+  tap_action:
+    action: none 
+```
+L'opzione **state_image** renderà trasparente l'immagine durante le ore notture (e quindi mostrando la principale), mentre la mostrerà durante le ore di luce (notare l'entità *sun.sun* ed i suoi stati *above_horizon* e *below_horizon*).
+
+#### BONUS 2: Gif animata per la Pioggia
+
+Nella sezione [Elaborazione Immagini](#elaborazione-immagini-photoshop-gimp-ecc) avevo menzionato un BONUS riguardante due immagini (giorno + notte) con eventuali balconi/terrazzie/giardini esclusi.
+Bene, lo scopo di queste due ulteriori immagini è quello di inserire nel nostro Floorplan, una o più gif raffiguranti il meteo che agiscano ovviamente solo all'esterno dell'abitazione.
+
+Per raggiungere questo scopo, utilizzeremo questo codice:
+
+```yaml
+- type: image
+  action: none
+  entity: weather.home
+  hold_action:
+    action: none
+  state_image:
+    rainy: /local/ndr_floorplan/floorplan/weather/rainstorm.gif
+    pouring: /local/ndr_floorplan/floorplan/weather/rain.gif
+    lightning-rainy: /local/ndr_floorplan/floorplan/weather/rain2.gif
+    snowy: /local/ndr_floorplan/transparent.png
+    snowy-rainy: /local/ndr_floorplan/transparent.png
+    sunny: /local/ndr_floorplan/transparent.png
+    clear-night: /local/ndr_floorplan/transparent.png
+    fog: /local/ndr_floorplan/transparent.png
+    hail: /local/ndr_floorplan/transparent.png
+    lightning: /local/ndr_floorplan/transparent.png
+    cloudy: /local/ndr_floorplan/transparent.png
+    partlycloudy: /local/ndr_floorplan/transparent.png
+    windy: /local/ndr_floorplan/transparent.png
+    windy-variant: /local/ndr_floorplan/transparent.png
+    exceptional: /local/ndr_floorplan/transparent.png
+  style:
+    left: 60%
+    mix-blend-mode: color-dodge
+    top: 50%
+    width: 110% 
+  tap_action:
+    action: none
+```
+
+> Il metodo sopra descritto è stato utilizzato con l'intento di utilizzare più di una gif. Se si volesse utilizzare solo una per, esempio, la pioggia, si potrebbe utilizzare *state_filter*. In questo modo si eviterebbe di menzionare tutti gli stati possibili dell'entità meteo. Più info sulla [doc ufficiale](https://www.home-assistant.io/lovelace/picture-elements/).
+
